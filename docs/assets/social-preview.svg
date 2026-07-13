@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f1ff"/>
+      <stop offset="0.55" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#eefaf5"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#141b42" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1070" cy="80" r="220" fill="#dce5ff" opacity="0.45"/>
+  <circle cx="95" cy="570" r="180" fill="#d9f6e9" opacity="0.55"/>
+  <g transform="translate(78 74)">
+    <rect width="58" height="58" rx="16" fill="#172252"/>
+    <text x="29" y="35" fill="white" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800">WM</text>
+    <text x="78" y="20" fill="#172252" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800">WORLD MODEL</text>
+    <text x="78" y="44" fill="#66708b" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="700" letter-spacing="3">EVALUATION SURVEY</text>
+  </g>
+  <text x="78" y="238" fill="#10162e" font-family="Arial,Helvetica,sans-serif" font-size="70" font-weight="800">A Survey of Benchmarks for</text>
+  <text x="78" y="322" fill="#334181" font-family="Arial,Helvetica,sans-serif" font-size="78" font-weight="800">World Model Evaluation</text>
+  <text x="80" y="392" fill="#3e4865" font-family="Arial,Helvetica,sans-serif" font-size="27">Target · Protocol · Evidence</text>
+  <g transform="translate(80 448)" filter="url(#shadow)">
+    <rect width="244" height="92" rx="18" fill="#f0edff" stroke="#afa3ff"/>
+    <text x="24" y="35" fill="#6c62a3" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800">D1 · TARGET</text>
+    <text x="24" y="65" fill="#151a32" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="800">What is evaluated?</text>
+  </g>
+  <g transform="translate(350 448)" filter="url(#shadow)">
+    <rect width="244" height="92" rx="18" fill="#eaf8f0" stroke="#95d8b2"/>
+    <text x="24" y="35" fill="#4a8465" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800">D2 · PROTOCOL</text>
+    <text x="24" y="65" fill="#151a32" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="800">How is it probed?</text>
+  </g>
+  <g transform="translate(620 448)" filter="url(#shadow)">
+    <rect width="244" height="92" rx="18" fill="#fff0f5" stroke="#eca8c2"/>
+    <text x="24" y="35" fill="#a55d78" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800">D3 · EVIDENCE</text>
+    <text x="24" y="65" fill="#151a32" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="800">What grounds it?</text>
+  </g>
+  <g transform="translate(910 448)">
+    <rect width="210" height="92" rx="18" fill="#172252"/>
+    <text x="105" y="37" fill="white" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="800">84</text>
+    <text x="105" y="66" fill="#ced6ff" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">BENCHMARKS</text>
+  </g>
+</svg>
