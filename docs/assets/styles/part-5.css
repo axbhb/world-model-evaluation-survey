@@ -1,0 +1,39 @@
+@media (max-width: 620px) {
+  html { scroll-padding-top: 72px; }
+  .site-header { position: sticky; }
+  .nav-shell { min-height: 60px; width: calc(100% - 26px); }
+  .brand-copy { display: none; }
+  .brand-mark { width: 35px; height: 35px; }
+  .primary-nav { gap: 0; }
+  .primary-nav a { font-size: 11px; padding: 8px 7px; }
+  .primary-nav a:nth-child(2), .primary-nav a:nth-child(5), .primary-nav a:nth-child(6) { display: none; }
+  .hero { padding-top: 48px; }
+  .hero h1 { font-size: clamp(38px, 12vw, 55px); }
+  .hero h1 br { display: none; }
+  .hero-lead { font-size: 17px; }
+  .hero-visual { margin-top: 15px; }
+  .hero-visual svg { transform: scale(1.04); }
+  .stat-strip { margin-top: 30px; }
+  .stat-strip div { min-height: 93px; padding: 18px; }
+  .stat-strip strong { font-size: 26px; }
+  .section { padding-block: 72px; }
+  .section-heading h2 { font-size: 38px; }
+  .section-heading > p:last-child { font-size: 16px; }
+  .taxonomy-panel, .matrix-shell, .timeline-shell { padding: 20px; }
+  .timeline-chart { grid-template-rows: none; }
+  .year-column { grid-template-rows: 180px auto; }
+  .explorer-toolbar { top: 68px; }
+  .search-box { grid-column: 1 / -1; }
+  .mobile-filter-button { min-height: 40px; }
+  .sort-control { grid-column: auto; }
+  .result-row { align-items: flex-start; flex-direction: column; gap: 5px; }
+  .benchmark-card { min-height: 300px; padding: 20px; }
+  .benchmark-card h3 { font-size: 21px; }
+  .community-grid article { min-height: 255px; }
+  .site-footer { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
