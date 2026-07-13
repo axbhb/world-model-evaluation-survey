@@ -1,6 +1,8 @@
 {
   "title": "A Survey of Benchmarks for World Model Evaluation",
-  "version": "July 2026 paper snapshot",
+  "version": "July 2026 four-dimensional paper snapshot",
+  "framework": "Target–Protocol–Metrics–Data",
+  "schemaVersion": 2,
   "total": 84,
   "crossCategory": 34,
   "metadata": "metadata.json",
@@ -10,5 +12,9 @@
     "benchmarks-3.json",
     "benchmarks-4.json"
   ],
-  "note": "The benchmark collection is split into four JSON arrays for lightweight static hosting. Concatenate the arrays in shard order to obtain the complete 84-benchmark snapshot."
+  "normalizedFields": {
+    "metrics": ["A", "J", "O"],
+    "evaluationData": ["RWD", "SBG", "SPTC", "HCP"]
+  },
+  "note": "The static explorer loads the four shards and normalizes their legacy field names and data codes to the latest four-dimensional PDF. Use the Download aligned JSON button on the project page to export the resolved 84-benchmark snapshot."
 }
