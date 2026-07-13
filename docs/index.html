@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A Survey of Benchmarks for World Model Evaluation</title>
-  <meta name="description" content="An interactive project page and benchmark explorer for A Survey of Benchmarks for World Model Evaluation, organized by evaluation target, protocol, evidence, and data construction.">
+  <meta name="description" content="An interactive project page and benchmark explorer for A Survey of Benchmarks for World Model Evaluation, organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.">
   <meta name="theme-color" content="#f8f9ff">
   <link rel="canonical" href="https://axbhb.github.io/world-model-evaluation-survey/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -12,12 +12,12 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World Model Evaluation Survey">
   <meta property="og:title" content="A Survey of Benchmarks for World Model Evaluation">
-  <meta property="og:description" content="Explore 84 world-model benchmarks through the Target–Protocol–Evidence taxonomy.">
+  <meta property="og:description" content="Explore 84 world-model benchmarks through the Target–Protocol–Metrics–Data taxonomy.">
   <meta property="og:url" content="https://axbhb.github.io/world-model-evaluation-survey/">
   <meta property="og:image" content="https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A Survey of Benchmarks for World Model Evaluation">
-  <meta name="twitter:description" content="An interactive benchmark-centric map of world-model evaluation.">
+  <meta name="twitter:description" content="An interactive benchmark-centric map of world-model evaluation across target, protocol, metrics, and data.">
   <meta name="twitter:image" content="https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg">
   <script type="application/ld+json">
   {
@@ -25,14 +25,14 @@
     "@type": "ScholarlyArticle",
     "name": "A Survey of Benchmarks for World Model Evaluation",
     "headline": "A Survey of Benchmarks for World Model Evaluation",
-    "description": "A benchmark-centric survey of world-model evaluation organized by evaluation target, protocol, evidence, and data construction.",
+    "description": "A benchmark-centric survey of world-model evaluation organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.",
     "datePublished": "2026",
     "inLanguage": "en",
     "isAccessibleForFree": true,
     "url": "https://axbhb.github.io/world-model-evaluation-survey/",
     "image": "https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg",
     "author": {"@type": "Organization", "name": "Anonymous Authors"},
-    "keywords": ["world models", "benchmark evaluation", "video generation", "embodied AI", "interactive evaluation"]
+    "keywords": ["world models", "benchmark evaluation", "evaluation metrics", "evaluation data", "video generation", "embodied AI", "interactive evaluation"]
   }
   </script>
 </head>
@@ -65,20 +65,20 @@
         <div class="hero-copy">
           <p class="eyebrow">World Model Evaluation · 2018–2026</p>
           <h1 id="hero-title">A Survey of Benchmarks for<br><span>World Model Evaluation</span></h1>
-          <p class="hero-lead">A benchmark-centric view of <strong>what capability is evaluated</strong>, <strong>how the model is probed</strong>, and <strong>what evidence grounds the score</strong>.</p>
+          <p class="hero-lead">A benchmark-centric view of <strong>what capability is evaluated</strong>, <strong>how the model is evaluated</strong>, <strong>which metrics are used</strong>, and <strong>where the data come from</strong>.</p>
           <p class="authors">Anonymous Authors</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a>
             <a class="button" href="#benchmarks">Explore benchmarks</a>
             <a class="button" href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-          <div class="snapshot-note"><span class="status-dot"></span> Paper snapshot · corpus last checked July 2026</div>
+          <div class="snapshot-note"><span class="status-dot"></span> Four-dimensional paper snapshot · corpus last checked July 2026</div>
         </div>
 
-        <div class="hero-visual" aria-label="Target, protocol and evidence framework illustration">
-          <svg viewBox="0 0 680 530" role="img" aria-labelledby="hero-viz-title hero-viz-desc">
-            <title id="hero-viz-title">Three-dimensional taxonomy for world-model evaluation</title>
-            <desc id="hero-viz-desc">A world-model benchmark is connected to evaluation target, evaluation protocol, and evaluation evidence.</desc>
+        <div class="hero-visual" aria-label="Target, protocol, metrics, and data framework illustration">
+          <svg viewBox="0 0 700 560" role="img" aria-labelledby="hero-viz-title hero-viz-desc">
+            <title id="hero-viz-title">Four-dimensional taxonomy for world-model evaluation</title>
+            <desc id="hero-viz-desc">A world-model benchmark is characterized by evaluation target, evaluation protocol, evaluation metrics, and evaluation data.</desc>
             <defs>
               <linearGradient id="coreGradient" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#303b73"/>
@@ -89,45 +89,45 @@
               </filter>
             </defs>
             <g class="viz-lines" fill="none" stroke-linecap="round">
-              <path d="M340 264 C260 264 250 128 188 128"/>
-              <path d="M340 264 C260 264 250 264 188 264"/>
-              <path d="M340 264 C260 264 250 400 188 400"/>
-              <path d="M414 264 C490 264 503 170 548 170"/>
-              <path d="M414 264 C490 264 503 264 548 264"/>
-              <path d="M414 264 C490 264 503 358 548 358"/>
+              <path d="M284 270 C230 270 220 130 205 130"/>
+              <path d="M284 300 C230 300 220 430 205 430"/>
+              <path d="M416 270 C470 270 480 130 495 130"/>
+              <path d="M416 300 C470 300 480 430 495 430"/>
             </g>
-            <g class="viz-node target-node" transform="translate(38 72)">
-              <rect width="180" height="112" rx="20"/>
-              <text x="22" y="36" class="viz-kicker">D1 · TARGET</text>
-              <text x="22" y="67" class="viz-title">What capability</text>
+            <g class="viz-node target-node" transform="translate(18 66)">
+              <rect width="210" height="128" rx="20"/>
+              <text x="22" y="34" class="viz-kicker">D1 · TARGET</text>
+              <text x="22" y="65" class="viz-title">What capability</text>
               <text x="22" y="91" class="viz-title">is evaluated?</text>
+              <text x="22" y="112" class="viz-caption">7 target categories</text>
             </g>
-            <g class="viz-node protocol-node" transform="translate(38 208)">
-              <rect width="180" height="112" rx="20"/>
-              <text x="22" y="36" class="viz-kicker">D2 · PROTOCOL</text>
-              <text x="22" y="67" class="viz-title">How is the</text>
-              <text x="22" y="91" class="viz-title">model probed?</text>
+            <g class="viz-node protocol-node" transform="translate(18 366)">
+              <rect width="210" height="128" rx="20"/>
+              <text x="22" y="34" class="viz-kicker">D2 · PROTOCOL</text>
+              <text x="22" y="65" class="viz-title">How is the model</text>
+              <text x="22" y="91" class="viz-title">evaluated?</text>
+              <text x="22" y="112" class="viz-caption">OL · CR · CL</text>
             </g>
-            <g class="viz-node evidence-node" transform="translate(38 344)">
-              <rect width="180" height="112" rx="20"/>
-              <text x="22" y="36" class="viz-kicker">D3 · EVIDENCE</text>
-              <text x="22" y="67" class="viz-title">What grounds</text>
-              <text x="22" y="91" class="viz-title">the score?</text>
+            <g class="viz-node metrics-node" transform="translate(472 66)">
+              <rect width="210" height="128" rx="20"/>
+              <text x="22" y="34" class="viz-kicker">D3 · METRICS</text>
+              <text x="22" y="65" class="viz-title">Which metrics</text>
+              <text x="22" y="91" class="viz-title">are used?</text>
+              <text x="22" y="112" class="viz-caption">automatic · judge · outcome</text>
             </g>
-            <g filter="url(#shadow)" transform="translate(286 206)">
-              <rect width="128" height="116" rx="28" fill="url(#coreGradient)"/>
-              <circle cx="64" cy="42" r="17" fill="#fff" fill-opacity=".14"/>
-              <path d="M52 42h24M64 30v24" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-              <text x="64" y="82" text-anchor="middle" class="core-title">Benchmark</text>
-              <text x="64" y="101" text-anchor="middle" class="core-sub">evaluation probe</text>
+            <g class="viz-node data-node" transform="translate(472 366)">
+              <rect width="210" height="128" rx="20"/>
+              <text x="22" y="34" class="viz-kicker">D4 · DATA</text>
+              <text x="22" y="65" class="viz-title">Where do the data</text>
+              <text x="22" y="91" class="viz-title">come from?</text>
+              <text x="22" y="112" class="viz-caption">real · simulated · curated · hybrid</text>
             </g>
-            <g class="readout-node" transform="translate(500 126)"><rect width="142" height="88" rx="18"/><text x="18" y="33">Future states</text><text x="18" y="58">and rollouts</text></g>
-            <g class="readout-node" transform="translate(500 220)"><rect width="142" height="88" rx="18"/><text x="18" y="33">Scores, judges</text><text x="18" y="58">and references</text></g>
-            <g class="readout-node" transform="translate(500 314)"><rect width="142" height="88" rx="18"/><text x="18" y="33">Agent outcomes</text><text x="18" y="58">and utility</text></g>
-            <g class="data-ribbon" transform="translate(248 454)">
-              <rect width="320" height="50" rx="16"/>
-              <text x="160" y="21" text-anchor="middle">Supporting layer · Benchmark data construction</text>
-              <text x="160" y="38" text-anchor="middle">real · simulated · curated · hybrid</text>
+            <g filter="url(#shadow)" transform="translate(284 218)">
+              <rect width="132" height="134" rx="28" fill="url(#coreGradient)"/>
+              <circle cx="66" cy="43" r="18" fill="#fff" fill-opacity=".14"/>
+              <path d="M54 43h24M66 31v24" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+              <text x="66" y="88" text-anchor="middle" class="core-title">Benchmark</text>
+              <text x="66" y="108" text-anchor="middle" class="core-sub">evaluation probe</text>
             </g>
           </svg>
         </div>
@@ -135,8 +135,9 @@
       <div class="stat-strip" aria-label="Survey statistics">
         <div><strong id="stat-total">84</strong><span>representative benchmarks</span></div>
         <div><strong>7</strong><span>evaluation targets</span></div>
-        <div><strong>3</strong><span>probing protocols</span></div>
-        <div><strong>3</strong><span>evidence families</span></div>
+        <div><strong>3</strong><span>evaluation protocols</span></div>
+        <div><strong>3</strong><span>metric families</span></div>
+        <div><strong>4</strong><span>evaluation data sources</span></div>
       </div>
     </section>
 
@@ -144,9 +145,9 @@
       <div class="section-heading split-heading">
         <div>
           <p class="eyebrow">Overview</p>
-          <h2>Evaluation claims need more than a single score.</h2>
+          <h2>Evaluation claims need four coordinates.</h2>
         </div>
-        <p>Two benchmarks can report strong performance while supporting very different claims. The survey separates the capability target, the probing protocol, and the scoring evidence so that benchmark results can be interpreted on comparable terms.</p>
+        <p>Two benchmarks can report strong performance while supporting very different claims. The survey separates capability target, evaluation protocol, metric family, and data source so results can be interpreted on comparable terms.</p>
       </div>
       <div class="principle-grid">
         <article class="principle-card target-card">
@@ -161,11 +162,17 @@
           <p>Distinguishes open-loop prediction, controlled rollout, and closed-loop interaction.</p>
           <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-protocols">View protocols <span>→</span></button>
         </article>
-        <article class="principle-card evidence-card">
+        <article class="principle-card metrics-card">
           <span class="card-index">03</span>
-          <h3>Evaluation Evidence</h3>
-          <p>Clarifies whether scores rely on automatic, judgment-based, or outcome-grounded evidence.</p>
-          <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-evidence">View evidence <span>→</span></button>
+          <h3>Evaluation Metrics</h3>
+          <p>Distinguishes automatic, judge-based, and outcome-grounded metric families.</p>
+          <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-metrics">View metrics <span>→</span></button>
+        </article>
+        <article class="principle-card data-card">
+          <span class="card-index">04</span>
+          <h3>Evaluation Data</h3>
+          <p>Identifies whether benchmark cases come from real collection, simulation, curation, or hybrid construction.</p>
+          <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-data">View data sources <span>→</span></button>
         </article>
       </div>
     </section>
@@ -173,7 +180,7 @@
     <section class="section taxonomy-section" id="taxonomy">
       <div class="section-heading">
         <p class="eyebrow">Taxonomy</p>
-        <h2>Target × Protocol × Evidence</h2>
+        <h2>Target × Protocol × Metrics × Data</h2>
         <p>Click any taxonomy item or matrix cell to open the corresponding subset in the benchmark explorer.</p>
       </div>
 
@@ -183,12 +190,16 @@
           <div class="taxonomy-options" id="target-shortcuts"></div>
         </div>
         <div class="taxonomy-panel compact-panel" id="taxonomy-protocols">
-          <div class="panel-heading"><span class="dimension-dot protocol-dot"></span><div><small>D2 · Evaluation Protocol</small><h3>How is the model probed?</h3></div></div>
+          <div class="panel-heading"><span class="dimension-dot protocol-dot"></span><div><small>D2 · Evaluation Protocol</small><h3>How is the model evaluated?</h3></div></div>
           <div class="taxonomy-options" id="protocol-shortcuts"></div>
         </div>
-        <div class="taxonomy-panel compact-panel" id="taxonomy-evidence">
-          <div class="panel-heading"><span class="dimension-dot evidence-dot"></span><div><small>D3 · Evaluation Evidence</small><h3>What grounds the evaluation?</h3></div></div>
-          <div class="taxonomy-options" id="evidence-shortcuts"></div>
+        <div class="taxonomy-panel compact-panel" id="taxonomy-metrics">
+          <div class="panel-heading"><span class="dimension-dot metrics-dot"></span><div><small>D3 · Evaluation Metrics</small><h3>Which metrics are used?</h3></div></div>
+          <div class="taxonomy-options" id="metrics-shortcuts"></div>
+        </div>
+        <div class="taxonomy-panel compact-panel" id="taxonomy-data">
+          <div class="panel-heading"><span class="dimension-dot data-dot"></span><div><small>D4 · Evaluation Data</small><h3>Where do the data come from?</h3></div></div>
+          <div class="taxonomy-options" id="data-shortcuts"></div>
         </div>
       </div>
 
@@ -218,7 +229,7 @@
     <section class="section benchmark-section" id="benchmarks">
       <div class="section-heading split-heading benchmark-heading">
         <div><p class="eyebrow">Benchmark Explorer</p><h2>Browse the paper snapshot.</h2></div>
-        <p>Search and filter the 84 representative benchmarks coded in Tables 3–9 of the survey.</p>
+        <p>Search and filter the 84 representative benchmarks coded in Tables 3–9 of the latest four-dimensional survey draft.</p>
       </div>
 
       <div class="explorer-shell">
@@ -236,16 +247,16 @@
             <div class="filter-options" data-filter-group="protocols"></div>
           </div>
           <div class="filter-group">
-            <h3>Evidence</h3>
-            <div class="filter-options" data-filter-group="evidence"></div>
+            <h3>Metrics</h3>
+            <div class="filter-options" data-filter-group="metrics"></div>
           </div>
           <div class="filter-group">
             <h3>Domain</h3>
             <div class="filter-options" data-filter-group="domains"></div>
           </div>
           <div class="filter-group">
-            <h3>Data construction</h3>
-            <div class="filter-options" data-filter-group="dataConstruction"></div>
+            <h3>Evaluation data</h3>
+            <div class="filter-options" data-filter-group="evaluationData"></div>
           </div>
           <button id="clear-filters" class="button filter-clear" type="button">Clear all filters</button>
         </aside>
@@ -280,20 +291,20 @@
         <article>
           <span class="community-icon" aria-hidden="true">＋</span>
           <h3>Suggest a benchmark</h3>
-          <p>Share a paper, benchmark suite, project page, and your suggested Target–Protocol–Evidence coding.</p>
-          <a href="https://github.com/axbhb/world-model-evaluation-survey/issues/new?title=Benchmark%20suggestion%3A%20&body=Benchmark%20name%3A%0APaper%20URL%3A%0ACode%20URL%3A%0ASuggested%20target%3A%0ASuggested%20protocol%3A%0ASuggested%20evidence%3A%0A" target="_blank" rel="noreferrer">Open a suggestion <span>↗</span></a>
+          <p>Share a paper, benchmark suite, project page, and your suggested Target–Protocol–Metrics–Data coding.</p>
+          <a href="https://github.com/axbhb/world-model-evaluation-survey/issues/new?title=Benchmark%20suggestion%3A%20&body=Benchmark%20name%3A%0APaper%20URL%3A%0ACode%20URL%3A%0ASuggested%20target%3A%0ASuggested%20protocol%3A%0ASuggested%20metrics%3A%0ASuggested%20data%20source%3A%0A" target="_blank" rel="noreferrer">Open a suggestion <span>↗</span></a>
         </article>
         <article>
           <span class="community-icon" aria-hidden="true">✓</span>
           <h3>Correct metadata</h3>
-          <p>Flag an incorrect year, domain, protocol, evidence type, data source, title, or link.</p>
+          <p>Flag an incorrect year, domain, protocol, metric family, data source, title, category, or link.</p>
           <a href="https://github.com/axbhb/world-model-evaluation-survey/issues/new?title=Metadata%20correction%3A%20&body=Benchmark%3A%0AField%20to%20correct%3A%0ACurrent%20value%3A%0AProposed%20value%3A%0ASource%3A%0A" target="_blank" rel="noreferrer">Report a correction <span>↗</span></a>
         </article>
         <article>
           <span class="community-icon" aria-hidden="true">⌘</span>
           <h3>Reuse the taxonomy</h3>
-          <p>The repository provides the benchmark list and a machine-readable snapshot for downstream analysis.</p>
-          <a href="assets/benchmarks.json" target="_blank">Open benchmark JSON <span>↗</span></a>
+          <p>Download a normalized, machine-readable snapshot aligned with the latest four-dimensional PDF.</p>
+          <button id="download-json" class="community-action" type="button">Download aligned JSON <span>↓</span></button>
         </article>
       </div>
     </section>
@@ -319,8 +330,8 @@
   </main>
 
   <footer class="site-footer">
-    <div><strong>A Survey of Benchmarks for World Model Evaluation</strong><span>Benchmark-centric · diagnostic · reproducible</span></div>
-    <div class="footer-links"><a href="#top">Back to top</a><a href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a><a href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a></div>
+    <div><strong>A Survey of Benchmarks for World Model Evaluation</strong><span>Target · Protocol · Metrics · Data</span></div>
+    <div class="footer-links"><a href="#top">Back to top</a><a href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a><a href="assets/benchmarks.json" target="_blank">Data manifest</a><a href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a></div>
   </footer>
 
   <script src="assets/app.js" defer></script>
