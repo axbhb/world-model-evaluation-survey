@@ -1,0 +1,65 @@
+/* Latest four-dimensional paper alignment: Target–Protocol–Metrics–Data. */
+.metrics-node rect { fill: var(--evidence-soft); stroke: #edbfd2; }
+.data-node rect { fill: #fff1e4; stroke: #efc79f; }
+.viz-caption { font-size: 10px; font-weight: 700; fill: #72778a; }
+.metrics-card::before { background: var(--evidence); }
+.data-card::before { background: var(--orange); }
+.metrics-dot { background: var(--evidence); }
+.data-dot { background: var(--orange); }
+
+.stat-strip { grid-template-columns: repeat(5, 1fr); }
+.principle-grid { grid-template-columns: repeat(4, 1fr); }
+.principle-card { min-height: 320px; }
+.taxonomy-layout { grid-template-columns: minmax(280px, 1.35fr) repeat(3, minmax(205px, .9fr)); }
+
+.community-grid button.community-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding: 20px 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-align: left;
+  cursor: pointer;
+}
+.community-grid button.community-action span { transition: transform .15s ease; }
+.community-grid button.community-action:hover span { transform: translateY(2px); }
+
+@media (max-width: 1160px) {
+  .principle-grid { grid-template-columns: repeat(2, 1fr); }
+  .taxonomy-layout { grid-template-columns: 1fr 1fr; }
+  .taxonomy-panel:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip div { border-bottom: 1px solid var(--line); }
+  .stat-strip div:nth-child(even) { border-right: 0; }
+  .stat-strip div:last-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .principle-grid, .taxonomy-layout { grid-template-columns: 1fr; }
+  .taxonomy-panel:first-child { grid-column: auto; }
+}
+
+@media (max-width: 620px) {
+  .hero-visual svg { transform: none; }
+  .stat-strip { grid-template-columns: 1fr; }
+  .stat-strip div,
+  .stat-strip div:nth-child(even),
+  .stat-strip div:last-child {
+    grid-column: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-strip div:last-child { border-bottom: 0; }
+}
