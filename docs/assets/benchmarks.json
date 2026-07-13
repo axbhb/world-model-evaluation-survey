@@ -1,0 +1,14 @@
+{
+  "title": "A Survey of Benchmarks for World Model Evaluation",
+  "version": "July 2026 paper snapshot",
+  "total": 84,
+  "crossCategory": 34,
+  "metadata": "metadata.json",
+  "shards": [
+    "benchmarks-1.json",
+    "benchmarks-2.json",
+    "benchmarks-3.json",
+    "benchmarks-4.json"
+  ],
+  "note": "The benchmark collection is split into four JSON arrays for lightweight static hosting. Concatenate the arrays in shard order to obtain the complete 84-benchmark snapshot."
+}
