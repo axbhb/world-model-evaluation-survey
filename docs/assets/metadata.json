@@ -1,1 +1,35 @@
-{"title":"A Survey of Benchmarks for World Model Evaluation","version":"July 2026 paper snapshot","total":84,"crossCategory":34,"yearMin":2018,"yearMax":2026,"targets":["Visual & Temporal Quality","Spatial & State Consistency","Long-Horizon Memory & State Persistence","Physical Plausibility","Causal & Counterfactual Reasoning","Control Fidelity & Interactive Dynamics","Functional Utility"],"protocolLabels":{"OL":"Open-Loop Prediction","CR":"Controlled Rollout","CL":"Closed-Loop Interaction"},"evidenceLabels":{"A":"Automatic Scoring","J":"Judgment-Based","O":"Outcome-Grounded"},"dataLabels":{"RO":"Real-World Recording","SG":"Simulator / Procedural","CSI":"Scenario / Prompt / Task Curation","HRS":"Hybrid Pipelines"}}
+{
+  "title": "A Survey of Benchmarks for World Model Evaluation",
+  "version": "July 2026 four-dimensional paper snapshot",
+  "framework": "Target–Protocol–Metrics–Data",
+  "dimensions": 4,
+  "total": 84,
+  "crossCategory": 34,
+  "yearMin": 2018,
+  "yearMax": 2026,
+  "targets": [
+    "Visual & Temporal Quality",
+    "Spatial & State Consistency",
+    "Long-Horizon Memory & State Persistence",
+    "Physical Plausibility",
+    "Causal & Counterfactual Reasoning",
+    "Control Fidelity & Interactive Dynamics",
+    "Functional Utility"
+  ],
+  "protocolLabels": {
+    "OL": "Open-Loop Prediction",
+    "CR": "Controlled Rollout",
+    "CL": "Closed-Loop Interaction"
+  },
+  "metricLabels": {
+    "A": "Automatic Metrics",
+    "J": "Judge-Based Metrics",
+    "O": "Outcome-Grounded Metrics"
+  },
+  "dataLabels": {
+    "RWD": "Real-World Data Collection",
+    "SBG": "Simulation-Based Generation",
+    "SPTC": "Scenario, Prompt, and Task Curation",
+    "HCP": "Hybrid Construction Pipelines"
+  }
+}
