@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Survey of Benchmarks for World Model Evaluation</title>
-  <meta name="description" content="An interactive project page and benchmark explorer for A Survey of Benchmarks for World Model Evaluation, organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.">
+  <title>A Survey of World Model Benchmarks</title>
+  <meta name="description" content="An interactive project page and benchmark explorer for A Survey of World Model Benchmarks, organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.">
   <meta name="theme-color" content="#f8f9ff">
   <link rel="canonical" href="https://axbhb.github.io/world-model-evaluation-survey/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles.css">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="World Model Evaluation Survey">
-  <meta property="og:title" content="A Survey of Benchmarks for World Model Evaluation">
-  <meta property="og:description" content="Explore 84 world-model benchmarks through the Target–Protocol–Metrics–Data taxonomy.">
+  <meta property="og:site_name" content="World Model Benchmarks Survey">
+  <meta property="og:title" content="A Survey of World Model Benchmarks">
+  <meta property="og:description" content="Explore 82 world-model benchmarks through the Target–Protocol–Metrics–Data taxonomy.">
   <meta property="og:url" content="https://axbhb.github.io/world-model-evaluation-survey/">
   <meta property="og:image" content="https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="A Survey of Benchmarks for World Model Evaluation">
+  <meta name="twitter:title" content="A Survey of World Model Benchmarks">
   <meta name="twitter:description" content="An interactive benchmark-centric map of world-model evaluation across target, protocol, metrics, and data.">
   <meta name="twitter:image" content="https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "name": "A Survey of Benchmarks for World Model Evaluation",
-    "headline": "A Survey of Benchmarks for World Model Evaluation",
-    "description": "A benchmark-centric survey of world-model evaluation organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.",
+    "name": "A Survey of World Model Benchmarks",
+    "headline": "A Survey of World Model Benchmarks",
+    "description": "An evaluation-centric survey of world model benchmarks organized by Evaluation Target, Evaluation Protocol, Evaluation Metrics, and Evaluation Data.",
     "datePublished": "2026",
     "inLanguage": "en",
     "isAccessibleForFree": true,
@@ -41,9 +41,9 @@
 
   <header class="site-header" id="top">
     <div class="nav-shell">
-      <a class="brand" href="#top" aria-label="World Model Evaluation Survey home">
+      <a class="brand" href="#top" aria-label="World Model Benchmarks Survey home">
         <span class="brand-mark" aria-hidden="true">WM</span>
-        <span class="brand-copy"><strong>Evaluation</strong><small>Survey</small></span>
+        <span class="brand-copy"><strong>Benchmarks</strong><small>Survey</small></span>
       </a>
       <nav class="primary-nav" aria-label="Main navigation">
         <a href="#overview">Overview</a>
@@ -63,16 +63,16 @@
       <div class="hero-orb hero-orb-b" aria-hidden="true"></div>
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">World Model Evaluation · 2018–2026</p>
-          <h1 id="hero-title">A Survey of Benchmarks for<br><span>World Model Evaluation</span></h1>
-          <p class="hero-lead">A benchmark-centric view of <strong>what capability is evaluated</strong>, <strong>how the model is evaluated</strong>, <strong>which metrics are used</strong>, and <strong>where the data come from</strong>.</p>
+          <p class="eyebrow">World Model Benchmarks · 2018–2026</p>
+          <h1 id="hero-title">A Survey of<br><span>World Model Benchmarks</span></h1>
+          <p class="hero-lead">An evaluation-centric view of <strong>what capability is evaluated</strong>, <strong>how the model is evaluated</strong>, <strong>which metrics are used</strong>, and <strong>where the data come from</strong>.</p>
           <p class="authors">Anonymous Authors</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a>
             <a class="button" href="#benchmarks">Explore benchmarks</a>
             <a class="button" href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-          <div class="snapshot-note"><span class="status-dot"></span> Four-dimensional paper snapshot · corpus last checked July 2026</div>
+          <div class="snapshot-note"><span class="status-dot"></span> Latest manuscript snapshot · 82 benchmarks · 43 cross-category · checked July 2026</div>
         </div>
 
         <div class="hero-visual" aria-label="Target, protocol, metrics, and data framework illustration">
@@ -132,14 +132,7 @@
           </svg>
         </div>
       </div>
-      <div class="stat-strip" aria-label="Survey statistics">
-        <div><strong id="stat-total">84</strong><span>representative benchmarks</span></div>
-        <div><strong>7</strong><span>evaluation targets</span></div>
-        <div><strong>3</strong><span>evaluation protocols</span></div>
-        <div><strong>3</strong><span>metric families</span></div>
-        <div><strong>4</strong><span>evaluation data sources</span></div>
-      </div>
-    </section>
+      <div class="stat-strip" aria-label="Survey statistics"><div><strong id="stat-total">82</strong><span>representative benchmarks</span></div><div><strong id="stat-cross">43</strong><span>cross-category benchmarks</span></div><div><strong>7</strong><span>evaluation targets</span></div><div><strong>3</strong><span>protocol / metric families</span></div><div><strong>4</strong><span>evaluation data sources</span></div></div></section>
 
     <section class="section" id="overview">
       <div class="section-heading split-heading">
@@ -219,17 +212,17 @@
       </div>
       <div class="timeline-shell">
         <div class="timeline-toolbar">
-          <span>Unique benchmarks introduced by year</span>
-          <button id="clear-year" class="small-button" type="button" hidden>Clear year filter</button>
+          <span>Unique benchmarks by release window</span>
+          <button id="clear-year" class="small-button" type="button" hidden>Clear period filter</button>
         </div>
-        <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by year"></div>
+        <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by period"></div>
       </div>
     </section>
 
     <section class="section benchmark-section" id="benchmarks">
       <div class="section-heading split-heading benchmark-heading">
-        <div><p class="eyebrow">Benchmark Explorer</p><h2>Browse the paper snapshot.</h2></div>
-        <p>Search and filter the 84 representative benchmarks coded in Tables 3–9 of the latest four-dimensional survey draft.</p>
+        <div><p class="eyebrow">Benchmark Explorer</p><h2>Browse the latest paper snapshot.</h2></div>
+        <p>Search and filter the 82 representative benchmarks coded in Figure 4 and Tables 3–9 of the latest manuscript.</p>
       </div>
 
       <div class="explorer-shell">
@@ -273,7 +266,7 @@
             <label class="sort-control"><span>Sort</span><select id="benchmark-sort"><option value="recent">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
           </div>
           <div id="active-filters" class="active-filters" aria-live="polite"></div>
-          <div class="result-row"><p><strong id="result-count">84</strong> results</p><p class="legend-note"><span class="cross-symbol">△</span> cross-category in the survey</p></div>
+          <div class="result-row"><p><strong id="result-count">82</strong> results</p><p class="legend-note"><span class="cross-symbol">△</span> cross-category in the survey</p></div>
           <div id="benchmark-grid" class="benchmark-grid"></div>
           <div id="empty-state" class="empty-state" hidden><h3>No benchmarks match these filters.</h3><p>Try removing one or more filters or changing the search query.</p><button class="button" id="empty-clear" type="button">Reset explorer</button></div>
         </div>
@@ -303,7 +296,7 @@
         <article>
           <span class="community-icon" aria-hidden="true">⌘</span>
           <h3>Reuse the taxonomy</h3>
-          <p>Download a normalized, machine-readable snapshot aligned with the latest four-dimensional PDF.</p>
+          <p>Download a normalized, machine-readable snapshot aligned with the latest manuscript.</p>
           <button id="download-json" class="community-action" type="button">Download aligned JSON <span>↓</span></button>
         </article>
       </div>
@@ -317,8 +310,8 @@
           <p>The public author list and manuscript identifier can be updated here when the paper is released.</p>
         </div>
         <div class="citation-code-wrap">
-          <pre id="citation-code"><code>@article{world_model_evaluation_survey_2026,
-  title   = {A Survey of Benchmarks for World Model Evaluation},
+          <pre id="citation-code"><code>@article{world_model_benchmarks_survey_2026,
+  title   = {A Survey of World Model Benchmarks},
   author  = {Anonymous Authors},
   year    = {2026},
   note    = {Manuscript}
@@ -330,10 +323,10 @@
   </main>
 
   <footer class="site-footer">
-    <div><strong>A Survey of Benchmarks for World Model Evaluation</strong><span>Target · Protocol · Metrics · Data</span></div>
+    <div><strong>A Survey of World Model Benchmarks</strong><span>Target · Protocol · Metrics · Data</span></div>
     <div class="footer-links"><a href="#top">Back to top</a><a href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a><a href="assets/benchmarks.json" target="_blank">Data manifest</a><a href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a></div>
   </footer>
 
-  <script src="assets/app.js" defer></script>
+  <script src="assets/app-v3.js?v=4" defer></script>
 </body>
 </html>

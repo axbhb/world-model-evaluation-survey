@@ -1,21 +1,9 @@
 {
-  "title": "A Survey of Benchmarks for World Model Evaluation",
-  "version": "July 2026 four-dimensional paper snapshot",
+  "title": "A Survey of World Model Benchmarks",
+  "version": "July 2026 manuscript snapshot",
   "framework": "Target–Protocol–Metrics–Data",
-  "dimensions": 4,
-  "total": 84,
-  "crossCategory": 34,
-  "yearMin": 2018,
-  "yearMax": 2026,
-  "targets": [
-    "Visual & Temporal Quality",
-    "Spatial & State Consistency",
-    "Long-Horizon Memory & State Persistence",
-    "Physical Plausibility",
-    "Causal & Counterfactual Reasoning",
-    "Control Fidelity & Interactive Dynamics",
-    "Functional Utility"
-  ],
+  "total": 82,
+  "crossCategory": 43,
   "protocolLabels": {
     "OL": "Open-Loop Prediction",
     "CR": "Controlled Rollout",
@@ -31,5 +19,53 @@
     "SBG": "Simulation-Based Generation",
     "SPTC": "Scenario, Prompt, and Task Curation",
     "HCP": "Hybrid Construction Pipelines"
-  }
+  },
+  "timelineBins": [
+    {
+      "label": "2018–2021",
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "label": "2022–2023",
+      "years": [
+        2022,
+        2023
+      ]
+    },
+    {
+      "label": "2024",
+      "years": [
+        2024
+      ]
+    },
+    {
+      "label": "2025",
+      "years": [
+        2025
+      ]
+    },
+    {
+      "label": "2026",
+      "years": [
+        2026
+      ]
+    }
+  ],
+  "dimensions": 4,
+  "yearMin": 2018,
+  "yearMax": 2026,
+  "targets": [
+    "Visual & Temporal Quality",
+    "Spatial & State Consistency",
+    "Long-Horizon Memory & State Persistence",
+    "Physical Plausibility",
+    "Causal & Counterfactual Reasoning",
+    "Control Fidelity & Interactive Dynamics",
+    "Functional Utility"
+  ]
 }

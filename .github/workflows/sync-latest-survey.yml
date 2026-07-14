@@ -1,27 +1,25 @@
-name: Sync latest survey snapshot
+name: Validate latest survey snapshot
 
 on:
   push:
     branches: ["main"]
     paths:
+      - "Readme.md"
+      - "docs/**"
       - "scripts/sync_latest_survey.py"
+      - "scripts/finalize_latest_snapshot.py"
       - ".github/workflows/sync-latest-survey.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
-  group: sync-latest-survey
+  group: validate-latest-survey
   cancel-in-progress: true
 
 jobs:
-  sync-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,42 +30,41 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate README and project-page metadata
-        run: python scripts/sync_latest_survey.py
+      - name: Regenerate files in the runner only
+        run: |
+          python scripts/sync_latest_survey.py
+          python scripts/finalize_latest_snapshot.py
 
-      - name: Validate generated snapshot
+      - name: Verify the committed files are synchronized
+        run: |
+          git diff --exit-code -- \
+            Readme.md \
+            docs/index.html \
+            docs/404.html \
+            docs/assets/benchmarks.json \
+            docs/assets/metadata.json \
+            docs/assets/social-preview.svg
+
+      - name: Validate the benchmark snapshot
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
+
           root = Path('.')
           manifest = json.loads((root / 'docs/assets/benchmarks.json').read_text())
+          assert manifest['title'] == 'A Survey of World Model Benchmarks'
           assert manifest['total'] == 82
           assert manifest['crossCategory'] == 43
           assert len(manifest['records']) == 82
+          assert manifest['records']['CLEVRER'][7] == 'S3+S4'
+          assert manifest['records']['WR-Arena'][7] == 'S3+S4+S6'
+
           html = (root / 'docs/index.html').read_text()
           assert 'A Survey of World Model Benchmarks' in html
           assert 'id="stat-cross">43<' in html
+          assert 'Unique benchmarks by release window' in html
+          assert 'Figure 4 and Tables 3–9' in html
           assert 'app-v3.js?v=4' in html
-          print('Validated 82 benchmarks and 43 cross-category entries.')
+          print('Validated 82 benchmarks, 43 cross-category entries, and Figure 4 sub-target mappings.')
           PY
-
-      - name: Commit synchronized files
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Readme.md docs/index.html docs/404.html docs/assets/benchmarks.json docs/assets/metadata.json docs/assets/social-preview.svg
-          git diff --cached --quiet || git commit -m "Align repository and project page with latest manuscript"
-          git push
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload project page
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: ./docs
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

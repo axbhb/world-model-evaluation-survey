@@ -1,15 +1,14 @@
 # A Survey of World Model Benchmarks
 
-This repository tracks the **82 benchmark releases** included in the current survey snapshot (2018–2026). The taxonomy and category membership below are synchronized with **Figure 4 and Tables 3–9** of the latest manuscript.
+[![Project Page](https://img.shields.io/badge/Project-Page-5965d8)](https://axbhb.github.io/world-model-evaluation-survey/) [![Benchmarks](https://img.shields.io/badge/Benchmarks-82-2f8f63)](https://axbhb.github.io/world-model-evaluation-survey/#benchmarks)
 
-Rows are intentionally repeated when a benchmark belongs to more than one evaluation-target category. **VideoScore**, **Scalable Policy Evaluation**, and **stable-worldmodel** are retained as supporting evaluation resources, but they are listed separately and are **not counted among the 82 benchmarks**.
+This repository accompanies **A Survey of World Model Benchmarks**. The latest manuscript contains **82 representative benchmarks** from **2018–2026**; **43** span multiple evaluation-target categories.
 
-> **Snapshot:** 82 benchmarks · 7 evaluation targets · corpus last checked July 2026.
+The project page follows the paper’s four-dimensional taxonomy: **Evaluation Target × Evaluation Protocol × Evaluation Metrics × Evaluation Data**.
 
----
+Rows are intentionally repeated across target tables. `△` marks a cross-category benchmark. The corpus was last checked in July 2026.
 
-## Table of Contents
-
+## Contents
 - [Visual and Temporal Quality](#visual-and-temporal-quality)
 - [Spatial and State Consistency](#spatial-and-state-consistency)
 - [Long-Horizon Memory and State Persistence](#long-horizon-memory-and-state-persistence)
@@ -19,227 +18,254 @@ Rows are intentionally repeated when a benchmark belongs to more than one evalua
 - [Functional Utility](#functional-utility)
 - [Supporting Evaluation Resources](#supporting-evaluation-resources)
 
----
+## Column conventions
+
+| Dimension | Codes | Meaning |
+|:--|:--|:--|
+| Protocol | `OL` / `CR` / `CL` | Open-Loop Prediction / Controlled Rollout / Closed-Loop Interaction |
+| Metrics | `A` / `J` / `O` | Automatic / Judge-Based / Outcome-Grounded Metrics |
+| Data | `RWD` / `SBG` / `SPTC` / `HCP` | Real-World Data Collection / Simulation-Based Generation / Scenario, Prompt, and Task Curation / Hybrid Construction Pipelines |
 
 ## Visual and Temporal Quality
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**FETV: A Benchmark for Fine-Grained Evaluation of Open-Domain Text-to-Video Generation**](https://arxiv.org/abs/2311.01813) | NeurIPS Datasets and Benchmarks | 2023-11 | [GitHub](https://github.com/llyx97/FETV) | - |
-| [**VBench: Comprehensive Benchmark Suite for Video Generative Models**](https://arxiv.org/abs/2311.17982) | CVPR | 2023-11 | [GitHub](https://github.com/Vchitect/VBench) | [Page](https://vchitect.github.io/VBench-project/) |
-| [**VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models**](https://arxiv.org/abs/2411.13503) | IEEE TPAMI | 2024-11 | [GitHub](https://github.com/Vchitect/VBench) | [Page](https://vchitect.github.io/VBench-project/) |
-| [**EvalCrafter: Benchmarking and Evaluating Large Video Generation Models**](https://arxiv.org/abs/2310.11440) | CVPR | 2023-10 | [GitHub](https://github.com/evalcrafter/EvalCrafter) | [Page](https://evalcrafter.github.io/) |
-| [**ChronoMagic-Bench: A Benchmark for Metamorphic Evaluation of Text-to-Time-lapse Video Generation**](https://arxiv.org/abs/2406.18522) | NeurIPS Datasets and Benchmarks Spotlight | 2024-06 | [GitHub](https://github.com/PKU-YuanGroup/ChronoMagic-Bench) | [Page](https://pku-yuangroup.github.io/ChronoMagic-Bench/) |
-| [**WorldScore: A Unified Evaluation Benchmark for World Generation**](https://arxiv.org/abs/2504.00983) | ICCV | 2025-04 | [GitHub](https://github.com/haoyi-duan/WorldScore) | [Page](https://haoyi-duan.github.io/WorldScore/) |
-| [**VMBench: A Benchmark for Perception-Aligned Video Motion Generation**](https://arxiv.org/abs/2503.10076) | ICCV | 2025-03 | [GitHub](https://github.com/AMAP-ML/VMBench) | [Page](https://amap-ml.github.io/VMBench-Website/) |
-| [**EWMBench: Evaluating Scene, Motion, and Semantic Quality in Embodied World Models**](https://arxiv.org/abs/2505.09694) | BMVC | 2025-05 | [GitHub](https://github.com/AgibotTech/EWMBench) | - |
-| [**WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models**](https://arxiv.org/abs/2602.08971) | arXiv | 2026-02 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**Matrix-Game: Interactive World Foundation Model (introduces GameWorld Score)**](https://arxiv.org/abs/2506.18701) | arXiv | 2025-06 | [GitHub](https://github.com/SkyworkAI/Matrix-Game) | [Page](https://matrix-game-homepage.github.io/) |
-| [**WorldMark: A Unified Benchmark Suite for Interactive Video World Models**](https://arxiv.org/abs/2604.21686) | arXiv | 2026-04 | [GitHub](https://github.com/alaya-studio/WorldMark) | [Page](https://alaya-studio.github.io/WorldMark/) |
-| [**4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models**](https://arxiv.org/abs/2511.19836) | CVPR | 2025-11 | - | [Page](https://yeppp27.github.io/4DWorldBench.github.io/) |
-| [**TC-Bench: Benchmarking Temporal Compositionality in Text-to-Video and Image-to-Video Generation**](https://arxiv.org/abs/2406.08656) | ACL Findings | 2024-06 | [GitHub](https://github.com/weixi-feng/TC-Bench) | [Page](https://weixi-feng.github.io/tc-bench/) |
-| [**WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World**](https://arxiv.org/abs/2512.10958) | CVPR Oral | 2025-12 | [GitHub](https://github.com/worldbench/WorldLens) | [Page](https://worldbench.github.io/worldlens) |
-| [**WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform**](https://arxiv.org/abs/2605.17912) | arXiv | 2026-05 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving**](https://arxiv.org/abs/2601.01528) | ICLR | 2026-01 | - | [Page](https://drivinggen-bench.github.io/) |
-| [**WBench: A Comprehensive Multi-Turn Benchmark for Interactive Video World Model Evaluation**](https://arxiv.org/abs/2605.25874) | arXiv | 2026-05 | - | - |
-| [**PEDRA: Evaluating the Realism of Pedestrian Dynamics in Video Generation**](https://arxiv.org/abs/2510.20182) | arXiv | 2025-10 | - | - |
-| [**Can World Simulators Reason? Gen-ViRe: A Generative Visual Reasoning Benchmark**](https://arxiv.org/abs/2511.13853) | arXiv | 2025-11 | - | - |
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**FETV**](https://scholar.google.com/scholar?q=FETV%3A%20A%20benchmark%20for%20fine-grained%20evaluation%20of%20open-domain%20text-to-video%20generation) | 2023 | video | OL | A+J | SPTC |
+| [**VBench △**](https://scholar.google.com/scholar?q=VBench%3A%20Comprehensive%20benchmark%20suite%20for%20video%20generative%20models) | 2024 | video | OL | A | SPTC |
+| [**VBench++ △**](https://arxiv.org/abs/2411.13503) | 2024 | video | OL | A | SPTC |
+| [**EvalCrafter**](https://scholar.google.com/scholar?q=EvalCrafter%3A%20Benchmarking%20and%20evaluating%20large%20video%20generation%20models) | 2024 | video | OL | A+J | SPTC |
+| [**ChronoMagic-Bench**](https://scholar.google.com/scholar?q=ChronoMagic-Bench%3A%20A%20benchmark%20for%20metamorphic%20evaluation%20of%20text-to-time-lapse%20video%20generation) | 2024 | video | OL | A+J | SPTC |
+| [**WorldScore △**](https://scholar.google.com/scholar?q=WorldScore%3A%20A%20unified%20evaluation%20benchmark%20for%20world%20generation) | 2025 | video | CR | A+J | HCP |
+| [**VMBench**](https://arxiv.org/abs/2503.10076) | 2025 | video | OL | A | SPTC |
+| [**EWMBench △**](https://arxiv.org/abs/2505.09694) | 2025 | embodied | CR | A+J | HCP |
+| [**WorldArena △**](https://arxiv.org/abs/2602.08971) | 2026 | embodied | OL+CL | A+J+O | SBG |
+| [**GameWorld Score △**](https://arxiv.org/abs/2506.18701) | 2025 | game | CL | A+J | SBG |
+| [**WorldMark △**](https://arxiv.org/abs/2604.21686) | 2026 | game+video | OL+CL | A+J | SBG |
+| [**4DWorldBench △**](https://arxiv.org/abs/2511.19836) | 2025 | video | CR | A+J | HCP |
+| [**TC-Bench △**](https://arxiv.org/abs/2406.08656) | 2024 | video | CR | A+J | HCP |
+| [**WorldLens △**](https://arxiv.org/abs/2512.10958) | 2026 | driving | OL+CL | A+J+O | HCP |
+| [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
+| [**DrivingGen △**](https://arxiv.org/abs/2601.01528) | 2026 | driving | CR | A+J | RWD |
+| [**WBench △**](https://arxiv.org/abs/2605.25874) | 2026 | video | CL | A+J | HCP |
+| [**Pedestrian sim.**](https://arxiv.org/abs/2510.20182) | 2025 | video | OL | A | RWD |
+| [**Gen-ViRe**](https://arxiv.org/abs/2511.13853) | 2025 | video | OL | J | HCP |
+| [**iWorld-Bench △**](https://arxiv.org/abs/2605.03941) | 2026 | video | CR | A | HCP |
 
 ## Spatial and State Consistency
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**VBench: Comprehensive Benchmark Suite for Video Generative Models**](https://arxiv.org/abs/2311.17982) | CVPR | 2023-11 | [GitHub](https://github.com/Vchitect/VBench) | [Page](https://vchitect.github.io/VBench-project/) |
-| [**VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models**](https://arxiv.org/abs/2411.13503) | IEEE TPAMI | 2024-11 | [GitHub](https://github.com/Vchitect/VBench) | [Page](https://vchitect.github.io/VBench-project/) |
-| [**WorldMark: A Unified Benchmark Suite for Interactive Video World Models**](https://arxiv.org/abs/2604.21686) | arXiv | 2026-04 | [GitHub](https://github.com/alaya-studio/WorldMark) | [Page](https://alaya-studio.github.io/WorldMark/) |
-| [**Matrix-Game: Interactive World Foundation Model (introduces GameWorld Score)**](https://arxiv.org/abs/2506.18701) | arXiv | 2025-06 | [GitHub](https://github.com/SkyworkAI/Matrix-Game) | [Page](https://matrix-game-homepage.github.io/) |
-| [**EWMBench: Evaluating Scene, Motion, and Semantic Quality in Embodied World Models**](https://arxiv.org/abs/2505.09694) | BMVC | 2025-05 | [GitHub](https://github.com/AgibotTech/EWMBench) | - |
-| [**WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models**](https://arxiv.org/abs/2602.08971) | arXiv | 2026-02 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World**](https://arxiv.org/abs/2512.10958) | CVPR Oral | 2025-12 | [GitHub](https://github.com/worldbench/WorldLens) | [Page](https://worldbench.github.io/worldlens) |
-| [**DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving**](https://arxiv.org/abs/2601.01528) | ICLR | 2026-01 | - | [Page](https://drivinggen-bench.github.io/) |
-| [**WorldScore: A Unified Evaluation Benchmark for World Generation**](https://arxiv.org/abs/2504.00983) | ICCV | 2025-04 | [GitHub](https://github.com/haoyi-duan/WorldScore) | [Page](https://haoyi-duan.github.io/WorldScore/) |
-| [**4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models**](https://arxiv.org/abs/2511.19836) | CVPR | 2025-11 | - | [Page](https://yeppp27.github.io/4DWorldBench.github.io/) |
-| [**Quantitative Video World Model Evaluation for Geometric-Consistency (PDI-Bench)**](https://arxiv.org/abs/2605.15185) | arXiv | 2026-05 | - | - |
-| [**LoopNav: Benchmarking Spatial Consistency in World Models**](https://arxiv.org/abs/2505.22976) | arXiv | 2025-05 | - | - |
-| [**MIND: Benchmarking Memory Consistency and Action Control in World Models**](https://arxiv.org/abs/2602.08025) | arXiv | 2026-02 | - | - |
-| [**MBench: A Comprehensive Benchmark on Memory Capability for Video World Models**](https://arxiv.org/abs/2606.00793) | arXiv | 2026-06 | - | - |
-| [**Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models**](https://arxiv.org/abs/2603.13215) | arXiv | 2026-03 | - | - |
-| [**CausalSpatial: A Benchmark for Object-Centric Causal Spatial Reasoning**](https://arxiv.org/abs/2601.13304) | arXiv | 2026-01 | - | - |
-| [**What-If World: A Causal Benchmark for General World Models in Embodied Scenarios**](https://arxiv.org/abs/2605.27589) | arXiv | 2026-05 | - | - |
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**VBench △**](https://scholar.google.com/scholar?q=VBench%3A%20Comprehensive%20benchmark%20suite%20for%20video%20generative%20models) | 2024 | video | OL | A | SPTC |
+| [**VBench++ △**](https://arxiv.org/abs/2411.13503) | 2024 | video | OL | A | SPTC |
+| [**WorldMark △**](https://arxiv.org/abs/2604.21686) | 2026 | game+video | OL+CL | A+J | SBG |
+| [**WorldLens △**](https://arxiv.org/abs/2512.10958) | 2026 | driving | OL+CL | A+J+O | HCP |
+| [**WorldArena △**](https://arxiv.org/abs/2602.08971) | 2026 | embodied | OL+CL | A+J+O | SBG |
+| [**WorldScore △**](https://scholar.google.com/scholar?q=WorldScore%3A%20A%20unified%20evaluation%20benchmark%20for%20world%20generation) | 2025 | video | CR | A+J | HCP |
+| [**DrivingGen △**](https://arxiv.org/abs/2601.01528) | 2026 | driving | CR | A+J | RWD |
+| [**EWMBench △**](https://arxiv.org/abs/2505.09694) | 2025 | embodied | CR | A+J | HCP |
+| [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | driving+embodied | CR | J | RWD |
+| [**4DWorldBench △**](https://arxiv.org/abs/2511.19836) | 2025 | video | CR | A+J | HCP |
+| [**GameWorld Score △**](https://arxiv.org/abs/2506.18701) | 2025 | game | CL | A+J | SBG |
+| [**LoopNav**](https://arxiv.org/abs/2505.22976) | 2025 | game | CR | A | SBG |
+| [**MIND △**](https://arxiv.org/abs/2602.08025) | 2026 | video | OL+CL | A | SBG |
+| [**MBench △**](https://arxiv.org/abs/2606.00793) | 2026 | video | OL | A+J | RWD |
+| [**STEVO-Bench △**](https://arxiv.org/abs/2603.13215) | 2026 | video | CR | J | HCP |
+| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | 2026 | image | CR | A | SBG |
+| [**PDI-Bench △**](https://arxiv.org/abs/2605.15185) | 2026 | video | OL | A | HCP |
+| [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | video | OL+CR | A+J | HCP |
+| [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | video | OL | J | HCP |
 
 ## Long-Horizon Memory and State Persistence
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldPrediction: A Benchmark for High-level World Modeling and Long-horizon Procedural Planning**](https://arxiv.org/abs/2506.04363) | ICML Workshop | 2025-06 | - | [Page](https://github.com/worldprediction/worldprediction.github.io) |
-| [**SmallWorlds: Assessing Dynamics Understanding of World Models in Isolated Environments**](https://arxiv.org/abs/2511.23465) | arXiv | 2025-11 | - | - |
-| [**World Reasoning Arena**](https://arxiv.org/abs/2603.25887) | arXiv | 2026-03 | [GitHub](https://github.com/MBZUAI-IFM/WR-Arena) | - |
-| [**WorldMark: A Unified Benchmark Suite for Interactive Video World Models**](https://arxiv.org/abs/2604.21686) | arXiv | 2026-04 | [GitHub](https://github.com/alaya-studio/WorldMark) | [Page](https://alaya-studio.github.io/WorldMark/) |
-| [**MBench: A Comprehensive Benchmark on Memory Capability for Video World Models**](https://arxiv.org/abs/2606.00793) | arXiv | 2026-06 | - | - |
-| [**MIND: Benchmarking Memory Consistency and Action Control in World Models**](https://arxiv.org/abs/2602.08025) | arXiv | 2026-02 | - | - |
-| [**WBench: A Comprehensive Multi-Turn Benchmark for Interactive Video World Model Evaluation**](https://arxiv.org/abs/2605.25874) | arXiv | 2026-05 | - | - |
-| [**WorldOlympiad: Can Your World Model Survive a Triathlon?**](https://arxiv.org/abs/2606.11129) | arXiv | 2026-06 | - | - |
-| [**World-Ego Modeling for Long-Horizon Evolution in Hybrid Embodied Tasks (introduces HTEWorld)**](https://arxiv.org/abs/2605.19957) | arXiv | 2026-05 | - | - |
-| [**RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation**](https://arxiv.org/abs/2604.19092) | CVPR Workshop | 2026-04 | [GitHub](https://github.com/fffstrong/RoboWM-Bench) | [Page](https://robowm-bench.github.io/RoboWM-Bench/) |
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldPrediction △**](https://arxiv.org/abs/2506.04363) | 2025 | video | OL | A | RWD |
+| [**SmallWorlds**](https://arxiv.org/abs/2511.23465) | 2025 | video | OL | A | SBG |
+| [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | driving+embodied | CR+CL | A+J+O | RWD |
+| [**WorldMark △**](https://arxiv.org/abs/2604.21686) | 2026 | game+video | OL+CL | A+J | SBG |
+| [**MBench △**](https://arxiv.org/abs/2606.00793) | 2026 | video | OL | A+J | RWD |
+| [**MIND △**](https://arxiv.org/abs/2602.08025) | 2026 | video | OL+CL | A | SBG |
+| [**WBench △**](https://arxiv.org/abs/2605.25874) | 2026 | video | CL | A+J | HCP |
+| [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | video | OL+CR | A+J | HCP |
+| [**HTEWorld**](https://arxiv.org/abs/2605.19957) | 2026 | embodied | CR | A | SBG |
+| [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | embodied | CL | A+O | HCP |
+| [**iWorld-Bench △**](https://arxiv.org/abs/2605.03941) | 2026 | video | CR | A | HCP |
 
 ## Physical Plausibility
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**IntPhys: A Benchmark for Visual Intuitive Physics Reasoning**](https://arxiv.org/abs/1803.07616) | IEEE TPAMI | 2018-03 | - | [Page](https://intphys.cognitive-ml.fr/download.html) |
-| [**IntPhys 2: Benchmarking Intuitive Physics Understanding in Complex Synthetic Environments**](https://arxiv.org/abs/2506.09849) | NeurIPS Datasets and Benchmarks | 2025-06 | [GitHub](https://github.com/facebookresearch/IntPhys2) | - |
-| [**CLEVRER: Collision Events for Video Representation and Reasoning**](https://arxiv.org/abs/1910.01442) | ICLR | 2019-10 | [GitHub](https://github.com/chuangg/CLEVRER) | [Page](http://clevrer.csail.mit.edu) |
-| [**CoPhy: Counterfactual Learning of Physical Dynamics**](https://arxiv.org/abs/1909.12000) | ICLR | 2019-09 | - | [Page](https://comphyreasoning.github.io/) |
-| [**PHYRE: A New Benchmark for Physical Reasoning**](https://arxiv.org/abs/1908.05656) | NeurIPS | 2019-08 | [GitHub](https://github.com/facebookresearch/phyre) | [Page](https://player.phyre.ai) |
-| [**CRAFT: A Benchmark for Causal Reasoning About Forces and Interactions**](https://arxiv.org/abs/2012.04293) | Findings of ACL | 2020-12 | [GitHub](https://github.com/hucvl/craft) | - |
-| [**Physion: Evaluating Physical Prediction from Vision in Humans and Machines**](https://arxiv.org/abs/2106.08261) | NeurIPS Datasets and Benchmarks | 2021-06 | [GitHub](https://github.com/cogtoolslab/physics-benchmarking-neurips2021) | [Page](https://physion-benchmark.github.io/) |
-| [**Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties**](https://arxiv.org/abs/2306.15668) | NeurIPS | 2023-06 | - | [Page](https://dingmyu.github.io/physion_v2/) |
-| [**ComPhy: Compositional Physical Reasoning of Objects and Events from Videos**](https://arxiv.org/abs/2205.01089) | ICLR | 2022-05 | - | [Page](https://comphyreasoning.github.io/) |
-| [**ContPhy: Continuum Physical Concept Learning and Reasoning from Videos**](https://arxiv.org/abs/2402.06119) | ICML | 2024-02 | - | [Page](https://physical-reasoning-project.github.io/) |
-| [**A Physical Coherence Benchmark for Evaluating Video Generation Models via Optical Flow-guided Frame Prediction**](https://arxiv.org/abs/2502.05503) | arXiv | 2025-02 | [GitHub](https://github.com/Jeckinchen/PhyCoBench) | - |
-| [**VideoPhy: Evaluating Physical Commonsense for Video Generation**](https://arxiv.org/abs/2406.03520) | ICLR | 2024-06 | [GitHub](https://github.com/Hritikbansal/videophy) | - |
-| [**VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation**](https://arxiv.org/abs/2503.06800) | ICLR | 2025-03 | [GitHub](https://github.com/Hritikbansal/videophy) | [Page](https://videophy2.github.io/) |
-| [**Towards World Simulator: Crafting Physical Commonsense-Based Benchmark for Video Generation**](https://arxiv.org/abs/2410.05363) | ICML | 2024-10 | [GitHub](https://github.com/OpenGVLab/PhyGenBench) | [Page](https://phygenbench123.github.io/) |
-| [**T2VPhysBench: A First-Principles Benchmark for Physical Consistency in Text-to-Video Generation**](https://arxiv.org/abs/2505.00337) | arXiv | 2025-05 | - | - |
-| [**Do Generative Video Models Understand Physical Principles? (Physics-IQ)**](https://arxiv.org/abs/2501.09038) | WACV | 2025-01 | [GitHub](https://github.com/google-deepmind/physics-iq-benchmark) | [Page](https://physics-iq.github.io/) |
-| [**WorldBench: Disambiguating Physics for Diagnostic Evaluation of World Models**](https://arxiv.org/abs/2601.21282) | arXiv | 2026-01 | - | [Page](https://world-bench.github.io/) |
-| [**PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models**](https://arxiv.org/abs/2507.13428) | ICLR | 2025-07 | [GitHub](https://github.com/g-jing/phy-world-bench) | [Page](https://research.nvidia.com/labs/dir/phyworldbench/) |
-| [**T2VWorldBench: A Benchmark for Evaluating World Knowledge in Text-to-Video Generation**](https://arxiv.org/abs/2507.18107) | WACV | 2025-07 | - | - |
-| [**WorldModelBench: Judging Video Generation Models as World Models**](https://arxiv.org/abs/2502.20694) | CVPR Workshop | 2025-02 | [GitHub](https://github.com/WorldModelBench-Team/WorldModelBench) | [Page](https://worldmodelbench-team.github.io) |
-| [**VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness**](https://arxiv.org/abs/2503.21755) | arXiv | 2025-03 | [GitHub](https://github.com/Vchitect/VBench) | [Page](https://vchitect.github.io/VBench-project/) |
-| [**4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models**](https://arxiv.org/abs/2511.19836) | CVPR | 2025-11 | - | [Page](https://yeppp27.github.io/4DWorldBench.github.io/) |
-| [**Matrix-Game: Interactive World Foundation Model (introduces GameWorld Score)**](https://arxiv.org/abs/2506.18701) | arXiv | 2025-06 | [GitHub](https://github.com/SkyworkAI/Matrix-Game) | [Page](https://matrix-game-homepage.github.io/) |
-| [**RigidBench: Evaluating Rigid-Body Physics in Video Generation Models**](https://openreview.net/forum?id=19bu6d4HcO) | ICLR Workshop | 2026 | - | - |
-| [**Morpheus: Benchmarking Physical Reasoning of Video Generative Models with Real Physical Experiments**](https://arxiv.org/abs/2504.02918) | arXiv | 2025-04 | - | - |
-| [**What-If World: A Causal Benchmark for General World Models in Embodied Scenarios**](https://arxiv.org/abs/2605.27589) | arXiv | 2026-05 | - | - |
-| [**RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation**](https://arxiv.org/abs/2604.19092) | CVPR Workshop | 2026-04 | [GitHub](https://github.com/fffstrong/RoboWM-Bench) | [Page](https://robowm-bench.github.io/RoboWM-Bench/) |
-| [**DreamGen: Unlocking Generalization in Robot Learning through Video World Models (introduces DreamGen Bench)**](https://arxiv.org/abs/2505.12705) | CoRL | 2025-05 | [GitHub](https://github.com/NVIDIA/GR00T-Dreams) | [Page](https://research.nvidia.com/labs/gear/dreamgen/) |
-| [**WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World**](https://arxiv.org/abs/2512.10958) | CVPR Oral | 2025-12 | [GitHub](https://github.com/worldbench/WorldLens) | [Page](https://worldbench.github.io/worldlens) |
-| [**PhyGround: Benchmarking Physical Reasoning in Generative World Models**](https://arxiv.org/abs/2605.10806) | arXiv | 2026-05 | - | - |
-| [**Physion-Eval: Evaluating Physical Realism in Generated Video via Human Reasoning**](https://arxiv.org/abs/2603.19607) | arXiv | 2026-03 | - | - |
-| [**CRONOS: Benchmarking Counterfactual Physical Consistency in Video Models**](https://arxiv.org/abs/2605.23699) | arXiv | 2026-05 | - | - |
-| [**VACT: A Video Automatic Causal Testing System and a Benchmark**](https://arxiv.org/abs/2503.06163) | arXiv | 2025-03 | - | - |
-| [**Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models**](https://arxiv.org/abs/2603.13215) | arXiv | 2026-03 | - | - |
-| [**PhysicsMind: Sim and Real Mechanics Benchmarking for Physical Reasoning and Prediction in Foundational VLMs and World Models**](https://arxiv.org/abs/2601.16007) | arXiv | 2026-01 | - | - |
-| [**Quantitative Video World Model Evaluation for Geometric-Consistency (PDI-Bench)**](https://arxiv.org/abs/2605.15185) | arXiv | 2026-05 | - | - |
-| [**HOCA-Bench: Beyond Semantic Perception to Predictive World Modeling via Hegelian Ontological-Causal Anomalies**](https://arxiv.org/abs/2602.19571) | arXiv | 2026-02 | - | - |
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**IntPhys**](https://arxiv.org/abs/1803.07616) | 2018 | video | OL | A | SBG |
+| [**IntPhys 2**](https://arxiv.org/abs/2506.09849) | 2025 | video | OL | A | SBG |
+| [**CLEVRER △**](https://scholar.google.com/scholar?q=CLEVRER%3A%20Collision%20events%20for%20video%20representation%20and%20reasoning) | 2020 | video | OL | A | SBG |
+| [**CoPhy △**](https://scholar.google.com/scholar?q=CoPhy%3A%20Counterfactual%20learning%20of%20physical%20dynamics) | 2020 | video | CR | A | SBG |
+| [**PHYRE**](https://scholar.google.com/scholar?q=PHYRE%3A%20A%20new%20benchmark%20for%20physical%20reasoning) | 2019 | video | CL | A+O | SBG |
+| [**CRAFT △**](https://scholar.google.com/scholar?q=CRAFT%3A%20A%20benchmark%20for%20causal%20reasoning%20about%20forces%20and%20interactions) | 2022 | video | CR | A | SBG |
+| [**Physion △**](https://scholar.google.com/scholar?q=Physion%3A%20Evaluating%20physical%20prediction%20from%20vision%20in%20humans%20and%20machines) | 2021 | video | OL | A | SBG |
+| [**Physion++**](https://scholar.google.com/scholar?q=Physion%2B%2B%3A%20Evaluating%20physical%20scene%20understanding%20that%20requires%20online%20inference%20of%20different%20physical%20properties) | 2023 | video | OL | A | SBG |
+| [**ComPhy △**](https://scholar.google.com/scholar?q=ComPhy%3A%20Compositional%20physical%20reasoning%20of%20objects%20and%20events%20from%20videos) | 2022 | video | CR | A | SBG |
+| [**ContPhy**](https://scholar.google.com/scholar?q=ContPhy%3A%20Continuum%20physical%20concept%20learning%20and%20reasoning%20from%20videos) | 2024 | video | OL | A | SBG |
+| [**PhyCoBench**](https://arxiv.org/abs/2502.05503) | 2025 | video | OL | A+J | SPTC |
+| [**VideoPhy △**](https://arxiv.org/abs/2406.03520) | 2024 | video | CR | J | SPTC |
+| [**VideoPhy-2 △**](https://arxiv.org/abs/2503.06800) | 2025 | video | CR | J | SPTC |
+| [**PhyGenBench △**](https://arxiv.org/abs/2410.05363) | 2024 | video | CR | J | SPTC |
+| [**T2VPhysBench**](https://arxiv.org/abs/2505.00337) | 2025 | video | CR | J | SPTC |
+| [**Physics-IQ △**](https://arxiv.org/abs/2501.09038) | 2025 | video | OL | A+J | RWD |
+| [**WorldBench**](https://arxiv.org/abs/2601.21282) | 2026 | video | OL | A | HCP |
+| [**PhyWorldBench △**](https://arxiv.org/abs/2507.13428) | 2025 | video | CR | J | SPTC |
+| [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | video | OL+CR | A+J | HCP |
+| [**ACWM-Phys △**](https://arxiv.org/abs/2605.08567) | 2026 | video | CR | A | SBG |
+| [**WorldModelBench △**](https://arxiv.org/abs/2502.20694) | 2025 | video | OL | J | SPTC |
+| [**VBench-2.0 △**](https://arxiv.org/abs/2503.21755) | 2025 | video | OL | A+J | SPTC |
+| [**GameWorld Score △**](https://arxiv.org/abs/2506.18701) | 2025 | game | CL | A+J | SBG |
+| [**T2VWorldBench △**](https://arxiv.org/abs/2507.18107) | 2025 | video | OL | J | SPTC |
+| [**4DWorldBench △**](https://arxiv.org/abs/2511.19836) | 2025 | video | CR | A+J | HCP |
+| [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | embodied | CL | A+O | HCP |
+| [**DreamGen Bench △**](https://arxiv.org/abs/2505.12705) | 2025 | embodied | OL | J | HCP |
+| [**WorldLens △**](https://arxiv.org/abs/2512.10958) | 2026 | driving | OL+CL | A+J+O | HCP |
+| [**RigidBench**](https://scholar.google.com/scholar?q=Rigidbench%3A%20Evaluating%20rigid-body%20physics%20in%20video%20generation%20models) | 2026 | video | OL | A | SBG |
+| [**Morpheus**](https://arxiv.org/abs/2504.02918) | 2025 | video | OL | A | RWD |
+| [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | driving+embodied | CR | J | RWD |
+| [**PhyGround**](https://arxiv.org/abs/2605.10806) | 2026 | video | OL | J | SPTC |
+| [**Physion-Eval**](https://arxiv.org/abs/2603.19607) | 2026 | video | OL | J | HCP |
+| [**CRONOS △**](https://arxiv.org/abs/2605.23699) | 2026 | video | CR | A+J | HCP |
+| [**VACT △**](https://arxiv.org/abs/2503.06163) | 2025 | video | CR | A+J | SPTC |
+| [**STEVO-Bench △**](https://arxiv.org/abs/2603.13215) | 2026 | video | CR | J | HCP |
+| [**PhysicsMind**](https://arxiv.org/abs/2601.16007) | 2026 | video | OL | A | HCP |
+| [**PDI-Bench △**](https://arxiv.org/abs/2605.15185) | 2026 | video | OL | A | HCP |
+| [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | video | OL | J | HCP |
 
 ## Causal and Counterfactual Reasoning
 
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
 ### Causal Reasoning over Observed Worlds
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**CLEVRER: Collision Events for Video Representation and Reasoning**](https://arxiv.org/abs/1910.01442) | ICLR | 2019-10 | [GitHub](https://github.com/chuangg/CLEVRER) | [Page](http://clevrer.csail.mit.edu) |
-| [**CATER: A Diagnostic Dataset for Compositional Actions and Temporal Reasoning**](https://arxiv.org/abs/1910.04744) | ICLR | 2019-10 | [GitHub](https://github.com/rohitgirdhar/CATER) | [Page](https://rohitgirdhar.github.io/CATER/) |
-| [**NExT-QA: Next Phase of Question-Answering to Explaining Temporal Actions**](https://arxiv.org/abs/2105.08276) | CVPR | 2021-05 | [GitHub](https://github.com/doc-doc/NExT-QA) | - |
-| [**From Representation to Reasoning: Towards Both Evidence and Commonsense Reasoning for Video Question Answering (Causal-VidQA)**](https://arxiv.org/abs/2205.14895) | CVPR | 2022-05 | [GitHub](https://github.com/bcmi/Causal-VidQA) | - |
-| [**CRAFT: A Benchmark for Causal Reasoning About Forces and Interactions**](https://arxiv.org/abs/2012.04293) | Findings of ACL | 2020-12 | [GitHub](https://github.com/hucvl/craft) | - |
-| [**IntentQA: Context-Aware Video Intent Reasoning**](https://openaccess.thecvf.com/content/ICCV2023/papers/Li_IntentQA_Context-aware_Video_Intent_Reasoning_ICCV_2023_paper.pdf) | ICCV | 2023 | [GitHub](https://github.com/JoseponLee/IntentQA) | - |
-| [**CoPhy: Counterfactual Learning of Physical Dynamics**](https://arxiv.org/abs/1909.12000) | ICLR | 2019-09 | - | [Page](https://comphyreasoning.github.io/) |
-| [**MMWorld: Towards Multi-Discipline Multi-Faceted World Model Evaluation in Videos**](https://arxiv.org/abs/2406.08407) | ICLR | 2024-06 | [GitHub](https://github.com/UCSB-AI/MMWorld) | [Page](https://mmworld-bench.github.io/) |
-| [**CausalVQA: A Physically Grounded Causal Reasoning Benchmark for Video Models**](https://arxiv.org/abs/2506.09943) | arXiv | 2025-06 | [GitHub](https://github.com/facebookresearch/CausalVQA) | [Page](https://ai.meta.com/research/publications/causalvqa-a-physically-grounded-causal-reasoning-benchmark-for-video-models/) |
-| [**VCRBench: Exploring Long-Form Causal Reasoning Capabilities of Large Video Language Models**](https://arxiv.org/abs/2505.08455) | CVPRW 2026 (CogVL) | 2025-05 | [GitHub](https://github.com/pritamqu/VCRBench) | [Page](https://pritamqu.github.io/VCRBench/) |
-| [**Physion: Evaluating Physical Prediction from Vision in Humans and Machines**](https://arxiv.org/abs/2106.08261) | NeurIPS Datasets and Benchmarks | 2021-06 | [GitHub](https://github.com/cogtoolslab/physics-benchmarking-neurips2021) | [Page](https://physion-benchmark.github.io/) |
-| [**Do Generative Video Models Understand Physical Principles? (Physics-IQ)**](https://arxiv.org/abs/2501.09038) | WACV | 2025-01 | [GitHub](https://github.com/google-deepmind/physics-iq-benchmark) | [Page](https://physics-iq.github.io/) |
-| [**WorldPrediction: A Benchmark for High-level World Modeling and Long-horizon Procedural Planning**](https://arxiv.org/abs/2506.04363) | ICML Workshop | 2025-06 | - | [Page](https://github.com/worldprediction/worldprediction.github.io) |
-| [**World Reasoning Arena**](https://arxiv.org/abs/2603.25887) | arXiv | 2026-03 | [GitHub](https://github.com/MBZUAI-IFM/WR-Arena) | - |
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**CLEVRER △**](https://scholar.google.com/scholar?q=CLEVRER%3A%20Collision%20events%20for%20video%20representation%20and%20reasoning) | 2020 | video | OL | A | SBG |
+| [**CATER**](https://scholar.google.com/scholar?q=CATER%3A%20A%20diagnostic%20dataset%20for%20compositional%20actions%20and%20temporal%20reasoning) | 2020 | video | OL | A | SBG |
+| [**NExT-QA**](https://arxiv.org/abs/2105.08276) | 2021 | video | OL | A | RWD |
+| [**Causal-VidQA**](https://arxiv.org/abs/2205.14895) | 2022 | video | CR | A | RWD |
+| [**CRAFT △**](https://scholar.google.com/scholar?q=CRAFT%3A%20A%20benchmark%20for%20causal%20reasoning%20about%20forces%20and%20interactions) | 2022 | video | CR | A | SBG |
+| [**IntentQA**](https://scholar.google.com/scholar?q=IntentQA%3A%20Context-aware%20video%20intent%20reasoning) | 2023 | video | OL | A | RWD |
+| [**MMWorld**](https://scholar.google.com/scholar?q=MMWorld%3A%20Towards%20multi-discipline%20multi-faceted%20world%20model%20evaluation%20in%20videos) | 2025 | video | CR | A+J | HCP |
+| [**VCRBench**](https://arxiv.org/abs/2505.08455) | 2025 | video | OL | A | RWD |
+| [**Physion △**](https://scholar.google.com/scholar?q=Physion%3A%20Evaluating%20physical%20prediction%20from%20vision%20in%20humans%20and%20machines) | 2021 | video | OL | A | SBG |
+| [**Physics-IQ △**](https://arxiv.org/abs/2501.09038) | 2025 | video | OL | A+J | RWD |
+| [**WorldPrediction △**](https://arxiv.org/abs/2506.04363) | 2025 | video | OL | A | RWD |
+| [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | driving+embodied | CR+CL | A+J+O | RWD |
+| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | 2026 | image | CR | A | SBG |
+| [**T2VWorldBench △**](https://arxiv.org/abs/2507.18107) | 2025 | video | OL | J | SPTC |
+| [**VACT △**](https://arxiv.org/abs/2503.06163) | 2025 | video | CR | A+J | SPTC |
+| [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | video | OL | J | HCP |
 
 ### Counterfactual Reasoning over Intervened Worlds
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**CLEVRER: Collision Events for Video Representation and Reasoning**](https://arxiv.org/abs/1910.01442) | ICLR | 2019-10 | [GitHub](https://github.com/chuangg/CLEVRER) | [Page](http://clevrer.csail.mit.edu) |
-| [**CRAFT: A Benchmark for Causal Reasoning About Forces and Interactions**](https://arxiv.org/abs/2012.04293) | Findings of ACL | 2020-12 | [GitHub](https://github.com/hucvl/craft) | - |
-| [**CoPhy: Counterfactual Learning of Physical Dynamics**](https://arxiv.org/abs/1909.12000) | ICLR | 2019-09 | - | [Page](https://comphyreasoning.github.io/) |
-| [**ComPhy: Compositional Physical Reasoning of Objects and Events from Videos**](https://arxiv.org/abs/2205.01089) | ICLR | 2022-05 | - | [Page](https://comphyreasoning.github.io/) |
-| [**ACQUIRED: A Dataset for Answering Counterfactual Questions in Real-Life Videos**](https://arxiv.org/abs/2311.01620) | EMNLP | 2023-11 | [GitHub](https://github.com/PlusLabNLP/acquired) | - |
-| [**From Representation to Reasoning: Towards Both Evidence and Commonsense Reasoning for Video Question Answering (Causal-VidQA)**](https://arxiv.org/abs/2205.14895) | CVPR | 2022-05 | [GitHub](https://github.com/bcmi/Causal-VidQA) | - |
-| [**MMWorld: Towards Multi-Discipline Multi-Faceted World Model Evaluation in Videos**](https://arxiv.org/abs/2406.08407) | ICLR | 2024-06 | [GitHub](https://github.com/UCSB-AI/MMWorld) | [Page](https://mmworld-bench.github.io/) |
-| [**CausalVQA: A Physically Grounded Causal Reasoning Benchmark for Video Models**](https://arxiv.org/abs/2506.09943) | arXiv | 2025-06 | [GitHub](https://github.com/facebookresearch/CausalVQA) | [Page](https://ai.meta.com/research/publications/causalvqa-a-physically-grounded-causal-reasoning-benchmark-for-video-models/) |
-| [**What-If World: A Causal Benchmark for General World Models in Embodied Scenarios**](https://arxiv.org/abs/2605.27589) | arXiv | 2026-05 | - | - |
-| [**World Reasoning Arena**](https://arxiv.org/abs/2603.25887) | arXiv | 2026-03 | [GitHub](https://github.com/MBZUAI-IFM/WR-Arena) | - |
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**CoPhy △**](https://scholar.google.com/scholar?q=CoPhy%3A%20Counterfactual%20learning%20of%20physical%20dynamics) | 2020 | video | CR | A | SBG |
+| [**ComPhy △**](https://scholar.google.com/scholar?q=ComPhy%3A%20Compositional%20physical%20reasoning%20of%20objects%20and%20events%20from%20videos) | 2022 | video | CR | A | SBG |
+| [**ACQUIRED**](https://arxiv.org/abs/2311.01620) | 2023 | video | CR | A | RWD |
+| [**CausalVQA**](https://arxiv.org/abs/2506.09943) | 2025 | video | CR | A | RWD |
+| [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | driving+embodied | CR | J | RWD |
+| [**CRONOS △**](https://arxiv.org/abs/2605.23699) | 2026 | video | CR | A+J | HCP |
 
 ## Control Fidelity and Interactive Dynamics
 
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
+
 ### Pre-specified Control Fidelity
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-Video Generation**](https://arxiv.org/abs/2407.14505) | CVPR | 2024-07 | [GitHub](https://github.com/KaiyueSun98/T2V-CompBench) | - |
-| [**TC-Bench: Benchmarking Temporal Compositionality in Text-to-Video and Image-to-Video Generation**](https://arxiv.org/abs/2406.08656) | ACL Findings | 2024-06 | [GitHub](https://github.com/weixi-feng/TC-Bench) | [Page](https://weixi-feng.github.io/tc-bench/) |
-| [**Is Your World Simulator a Good Story Presenter? A Consecutive Events-Based Benchmark for Future Long Video Generation (StoryEval)**](https://arxiv.org/abs/2412.16211) | CVPR 2025 | 2024-12 | [GitHub](https://github.com/ypwang61/StoryEval) | [Page](https://ypwang61.github.io/project/StoryEval/) |
-| [**VideoPhy: Evaluating Physical Commonsense for Video Generation**](https://arxiv.org/abs/2406.03520) | ICLR | 2024-06 | [GitHub](https://github.com/Hritikbansal/videophy) | - |
-| [**VideoPhy-2: A Challenging Action-Centric Physical Commonsense Evaluation in Video Generation**](https://arxiv.org/abs/2503.06800) | ICLR | 2025-03 | [GitHub](https://github.com/Hritikbansal/videophy) | [Page](https://videophy2.github.io/) |
-| [**Towards World Simulator: Crafting Physical Commonsense-Based Benchmark for Video Generation**](https://arxiv.org/abs/2410.05363) | ICML | 2024-10 | [GitHub](https://github.com/OpenGVLab/PhyGenBench) | [Page](https://phygenbench123.github.io/) |
-| [**PhyWorldBench: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models**](https://arxiv.org/abs/2507.13428) | ICLR | 2025-07 | [GitHub](https://github.com/g-jing/phy-world-bench) | [Page](https://research.nvidia.com/labs/dir/phyworldbench/) |
-| [**OSCBench: Benchmarking Object State Change in Text-to-Video Generation**](https://arxiv.org/abs/2603.11698) | arXiv | 2026-03 | - | - |
-| [**Wan-Move: Motion-Controllable Video Generation via Latent Trajectory Guidance (introduces MoveBench)**](https://arxiv.org/abs/2512.08765) | NeurIPS | 2025-12 | [GitHub](https://github.com/ali-vilab/Wan-Move) | [Page](https://wan-move.github.io/) |
-| [**MagicMotion: Controllable Video Generation with Dense-to-Sparse Trajectory Guidance (introduces MagicBench)**](https://arxiv.org/abs/2503.16421) | ICCV | 2025-03 | [GitHub](https://github.com/quanhaol/MagicMotion) | [Page](https://quanhaol.github.io/magicmotion-site/) |
-| [**WorldScore: A Unified Evaluation Benchmark for World Generation**](https://arxiv.org/abs/2504.00983) | ICCV | 2025-04 | [GitHub](https://github.com/haoyi-duan/WorldScore) | [Page](https://haoyi-duan.github.io/WorldScore/) |
-| [**4DWorldBench: A Comprehensive Evaluation Framework for 3D/4D World Generation Models**](https://arxiv.org/abs/2511.19836) | CVPR | 2025-11 | - | [Page](https://yeppp27.github.io/4DWorldBench.github.io/) |
-| [**DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving**](https://arxiv.org/abs/2601.01528) | ICLR | 2026-01 | - | [Page](https://drivinggen-bench.github.io/) |
-| [**ACT-Bench: Towards Action Controllable World Models for Autonomous Driving**](https://arxiv.org/abs/2412.05337) | arXiv | 2024-12 | - | - |
-| [**What-If World: A Causal Benchmark for General World Models in Embodied Scenarios**](https://arxiv.org/abs/2605.27589) | arXiv | 2026-05 | - | - |
-| [**Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for World Models**](https://arxiv.org/abs/2603.22212) | arXiv | 2026-03 | [GitHub](https://github.com/AMAP-ML/Omni-WorldBench) | - |
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**T2V-CompBench**](https://scholar.google.com/scholar?q=T2VCompBench%3A%20A%20comprehensive%20benchmark%20for%20compositional%20textto-video%20generation) | 2025 | video | CR | A+J | SPTC |
+| [**TC-Bench △**](https://arxiv.org/abs/2406.08656) | 2024 | video | CR | A+J | HCP |
+| [**StoryEval**](https://arxiv.org/abs/2412.16211) | 2024 | video | CR | J | SPTC |
+| [**VideoPhy △**](https://arxiv.org/abs/2406.03520) | 2024 | video | CR | J | SPTC |
+| [**VideoPhy-2 △**](https://arxiv.org/abs/2503.06800) | 2025 | video | CR | J | SPTC |
+| [**PhyGenBench △**](https://arxiv.org/abs/2410.05363) | 2024 | video | CR | J | SPTC |
+| [**PhyWorldBench △**](https://arxiv.org/abs/2507.13428) | 2025 | video | CR | J | SPTC |
+| [**OSCBench**](https://arxiv.org/abs/2603.11698) | 2026 | video | CR | J | SPTC |
+| [**MoveBench**](https://arxiv.org/abs/2512.08765) | 2025 | video | CR | A+J | RWD |
+| [**MagicBench**](https://arxiv.org/abs/2503.16421) | 2025 | video | CR | A | RWD |
+| [**WorldScore △**](https://scholar.google.com/scholar?q=WorldScore%3A%20A%20unified%20evaluation%20benchmark%20for%20world%20generation) | 2025 | video | CR | A+J | HCP |
+| [**4DWorldBench △**](https://arxiv.org/abs/2511.19836) | 2025 | video | CR | A+J | HCP |
+| [**DrivingGen △**](https://arxiv.org/abs/2601.01528) | 2026 | driving | CR | A+J | RWD |
+| [**ACT-Bench**](https://arxiv.org/abs/2412.05337) | 2024 | driving | CR | A | RWD |
+| [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | driving+embodied | CR | J | RWD |
+| [**Omni-WorldBench**](https://arxiv.org/abs/2603.22212) | 2026 | video | CR | A+J | HCP |
+| [**DreamGen Bench △**](https://arxiv.org/abs/2505.12705) | 2025 | embodied | OL | J | HCP |
+| [**WorldModelBench △**](https://arxiv.org/abs/2502.20694) | 2025 | video | OL | J | SPTC |
+| [**VBench-2.0 △**](https://arxiv.org/abs/2503.21755) | 2025 | video | OL | A+J | SPTC |
 
 ### Interactive Action Fidelity
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldMark: A Unified Benchmark Suite for Interactive Video World Models**](https://arxiv.org/abs/2604.21686) | arXiv | 2026-04 | [GitHub](https://github.com/alaya-studio/WorldMark) | [Page](https://alaya-studio.github.io/WorldMark/) |
-| [**World Reasoning Arena**](https://arxiv.org/abs/2603.25887) | arXiv | 2026-03 | [GitHub](https://github.com/MBZUAI-IFM/WR-Arena) | - |
-| [**WorldSimBench: Towards Video Generation Models as World Simulators**](https://arxiv.org/abs/2410.18072) | ICML | 2024-10 | - | [Page](https://iranqin.github.io/WorldSimBench.github.io/) |
-| [**WBench: A Comprehensive Multi-Turn Benchmark for Interactive Video World Model Evaluation**](https://arxiv.org/abs/2605.25874) | arXiv | 2026-05 | - | - |
-| [**iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework**](https://arxiv.org/abs/2605.03941) | arXiv | 2026-05 | - | - |
-| [**MIND: Benchmarking Memory Consistency and Action Control in World Models**](https://arxiv.org/abs/2602.08025) | arXiv | 2026-02 | - | - |
-| [**ACWM-Phys: Investigating Generalized Physical Interaction in Action-Conditioned Video World Models**](https://arxiv.org/abs/2605.08567) | arXiv | 2026-05 | - | - |
-| [**RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation**](https://arxiv.org/abs/2604.19092) | CVPR Workshop | 2026-04 | [GitHub](https://github.com/fffstrong/RoboWM-Bench) | [Page](https://robowm-bench.github.io/RoboWM-Bench/) |
-| [**WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform**](https://arxiv.org/abs/2605.17912) | arXiv | 2026-05 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldMark △**](https://arxiv.org/abs/2604.21686) | 2026 | game+video | OL+CL | A+J | SBG |
+| [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | driving+embodied | CR+CL | A+J+O | RWD |
+| [**WorldSimBench △**](https://arxiv.org/abs/2410.18072) | 2024 | game+driving+embodied | OL+CL | A+J+O | HCP |
+| [**WBench △**](https://arxiv.org/abs/2605.25874) | 2026 | video | CL | A+J | HCP |
+| [**iWorld-Bench △**](https://arxiv.org/abs/2605.03941) | 2026 | video | CR | A | HCP |
+| [**MIND △**](https://arxiv.org/abs/2602.08025) | 2026 | video | OL+CL | A | SBG |
+| [**ACWM-Phys △**](https://arxiv.org/abs/2605.08567) | 2026 | video | CR | A | SBG |
+| [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | embodied | CL | A+O | HCP |
+| [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
+| [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | video | OL+CR | A+J | HCP |
 
 ## Functional Utility
 
-### World Model as Data Engine
+_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models**](https://arxiv.org/abs/2602.08971) | arXiv | 2026-02 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform**](https://arxiv.org/abs/2605.17912) | arXiv | 2026-05 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
+### Data Engine
 
-### World Model as Policy Evaluator
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldArena △**](https://arxiv.org/abs/2602.08971) | 2026 | embodied | OL+CL | A+J+O | SBG |
+| [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models**](https://arxiv.org/abs/2602.08971) | arXiv | 2026-02 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
+### Policy Evaluator
 
-### World Model as Planner
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldArena △**](https://arxiv.org/abs/2602.08971) | 2026 | embodied | OL+CL | A+J+O | SBG |
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models**](https://arxiv.org/abs/2602.08971) | arXiv | 2026-02 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform**](https://arxiv.org/abs/2605.17912) | arXiv | 2026-05 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
-| [**World-in-World: World Models in a Closed-Loop World**](https://arxiv.org/abs/2510.18135) | ICLR | 2025-10 | [GitHub](https://github.com/World-In-World/world-in-world) | [Page](https://world-in-world.github.io/) |
-| [**EVA: An Embodied World Model for Future Video Anticipation (introduces EVA-Bench)**](https://arxiv.org/abs/2410.15461) | ICML | 2024-10 | [GitHub](https://github.com/litwellchi/EmbodiedVideoAnticipator) | [Page](https://sites.google.com/view/eva-public) |
-| [**WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World**](https://arxiv.org/abs/2512.10958) | CVPR Oral | 2025-12 | [GitHub](https://github.com/worldbench/WorldLens) | [Page](https://worldbench.github.io/worldlens) |
-| [**RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation**](https://arxiv.org/abs/2604.19092) | CVPR Workshop | 2026-04 | [GitHub](https://github.com/fffstrong/RoboWM-Bench) | [Page](https://robowm-bench.github.io/RoboWM-Bench/) |
-| [**WorldSimBench: Towards Video Generation Models as World Simulators**](https://arxiv.org/abs/2410.18072) | ICML | 2024-10 | - | [Page](https://iranqin.github.io/WorldSimBench.github.io/) |
+### Planner
 
-### World Model as Interactive Training Environment
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldArena △**](https://arxiv.org/abs/2602.08971) | 2026 | embodied | OL+CL | A+J+O | SBG |
+| [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
+| [**World-in-World**](https://arxiv.org/abs/2510.18135) | 2025 | embodied | CL | A+J+O | HCP |
+| [**EVA-Bench**](https://arxiv.org/abs/2410.15461) | 2024 | embodied | OL | A+J | HCP |
+| [**WorldLens △**](https://arxiv.org/abs/2512.10958) | 2026 | driving | OL+CL | A+J+O | HCP |
+| [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | embodied | CL | A+O | HCP |
+| [**WorldSimBench △**](https://arxiv.org/abs/2410.18072) | 2024 | game+driving+embodied | OL+CL | A+J+O | HCP |
 
-| Title | Venue | Date | Code | Page |
-|:--|:--:|:--:|:--:|:--:|
-| [**WorldArena 2.0: Extending Embodied World Model Benchmarking on Modality, Functionality and Platform**](https://arxiv.org/abs/2605.17912) | arXiv | 2026-05 | [GitHub](https://github.com/tsinghua-fib-lab/WorldArena) | [Page](https://world-arena.ai/) |
+### Interactive Training Environment
+
+| Benchmark | Year | Domain | Protocol | Metrics | Data |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
 
 ## Supporting Evaluation Resources
 
-The following resources are discussed in the survey because they support world-model evaluation, but they are not standalone benchmark artifacts and are excluded from the benchmark count.
+Discussed in the latest manuscript, but not counted in the 82-benchmark corpus or Tables 3–9:
 
-| Resource | Artifact type | Venue | Date | Code | Page |
-|:--|:--|:--:|:--:|:--:|:--:|
-| [**VideoScore: Building Automatic Metrics to Simulate Fine-Grained Human Feedback for Video Generation**](https://arxiv.org/abs/2406.15252) | Metric / learned evaluator | EMNLP | 2024-06 | [GitHub](https://github.com/TIGER-AI-Lab/VideoScore) | [Page](https://tiger-ai-lab.github.io/VideoScore/) |
-| [**Scalable Policy Evaluation with Video World Models**](https://arxiv.org/abs/2511.11520) | Evaluation study / protocol | arXiv | 2025-11 | - | - |
-| [**stable-worldmodel: A Platform for Reproducible World Modeling Research and Evaluation**](https://arxiv.org/abs/2605.21800) | Platform / toolkit | arXiv | 2026-05 | [GitHub](https://github.com/galilai-group/stable-worldmodel) | [Page](https://galilai-group.github.io/stable-worldmodel/) |
+- [**VideoScore**](https://arxiv.org/abs/2406.15252) — metric/resource discussed in §6.
+- [**Scalable Policy Evaluation**](https://arxiv.org/abs/2511.11520) — supporting policy-evaluation study discussed in §4.8.2.
+- [**stable-worldmodel**](https://arxiv.org/abs/2605.21800) — toolkit/platform discussed in §8.5.
 
----
+## Machine-readable data
 
-Please open an issue or pull request when a benchmark, code repository, project page, or publication status needs to be added or corrected.
+- [`docs/assets/benchmarks.json`](docs/assets/benchmarks.json): compact canonical manifest used by the explorer
+- [Interactive project page](https://axbhb.github.io/world-model-evaluation-survey/)
