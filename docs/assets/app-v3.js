@@ -35,12 +35,17 @@
   function configureTimeline() {
     const chart = document.querySelector("#timeline-chart");
     const clearPeriod = document.querySelector("#clear-year");
+    const analysisTitle = document.querySelector(".timeline-analysis-title");
 
     if (chart) {
       chart.setAttribute("aria-label", "Benchmark releases by release window");
     }
     if (clearPeriod) {
       clearPeriod.textContent = "Clear period filter";
+    }
+    if (analysisTitle) {
+      setTextIfChanged(analysisTitle, "Growth analysis");
+      analysisTitle.style.textAlign = "left";
     }
   }
 
