@@ -66,6 +66,7 @@ const els = {
   dataShortcuts: $("#data-shortcuts"),
   matrix: $("#taxonomy-matrix"),
   timeline: $("#timeline-chart"),
+  timelineTargetMatrix: $("#timeline-target-matrix"),
   clearPeriod: $("#clear-year"),
   copyCitation: $("#copy-citation"),
   citation: $("#citation-code"),
@@ -451,6 +452,54 @@ function buildTimeline() {
     els.timeline.append(column);
   });
   els.clearPeriod.hidden = !state.period;
+  buildTimelineTargetMatrix();
+}
+
+function focusTimelineTarget(target, period = null) {
+  Object.values(state.filters).forEach((values) => values.clear());
+  state.period = period;
+  state.filters.targets.add(target);
+  updateUrl();
+  renderAll();
+  $("#benchmarks").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function buildTimelineTargetMatrix() {
+  if (!els.timelineTargetMatrix) return;
+
+  const bins = state.metadata.timelineBins;
+  const counts = TARGETS.flatMap((target) => bins.map((bin) =>
+    state.benchmarks.filter((item) => bin.years.includes(item.year) && item.targets.includes(target)).length
+  ));
+  const max = Math.max(...counts, 1);
+
+  const head = bins.map((bin) => `<th scope="col">${escapeHtml(bin.label)}</th>`).join("");
+  const rows = TARGETS.map((target) => {
+    const color = TARGET_COLORS[target] || "#6f63d9";
+    const cells = bins.map((bin) => {
+      const count = state.benchmarks.filter((item) =>
+        bin.years.includes(item.year) && item.targets.includes(target)
+      ).length;
+      const active = state.period === bin.label && state.filters.targets.has(target);
+      return `<td><button type="button" class="timeline-target-cell" data-target="${escapeHtml(target)}" data-period="${escapeHtml(bin.label)}" style="--target-color:${color};--cell-opacity:${(0.04 + (count / max) * 0.32).toFixed(3)}" aria-label="${escapeHtml(target)}, ${escapeHtml(bin.label)}: ${count} benchmarks" aria-pressed="${active}" ${count === 0 ? "disabled" : ""}><strong>${count}</strong></button></td>`;
+    }).join("");
+    const active = state.filters.targets.has(target) && !state.period;
+    return `<tr><th scope="row"><button type="button" class="timeline-target-row-button" data-target="${escapeHtml(target)}" style="--target-color:${color}" aria-pressed="${active}"><span class="timeline-target-dot" aria-hidden="true"></span><span>${escapeHtml(targetShortLabel(target))}</span></button></th>${cells}</tr>`;
+  }).join("");
+
+  els.timelineTargetMatrix.innerHTML = `
+    <table class="timeline-target-matrix">
+      <caption class="sr-only">Benchmark counts for each evaluation target and release window. Counts overlap for cross-category benchmarks.</caption>
+      <thead><tr><th scope="col">Evaluation target</th>${head}</tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+  $$(".timeline-target-row-button", els.timelineTargetMatrix).forEach((button) => {
+    button.addEventListener("click", () => focusTimelineTarget(button.dataset.target));
+  });
+  $$(".timeline-target-cell", els.timelineTargetMatrix).forEach((button) => {
+    button.addEventListener("click", () => focusTimelineTarget(button.dataset.target, button.dataset.period));
+  });
 }
 
 function renderCards(items) {

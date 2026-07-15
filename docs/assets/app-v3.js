@@ -38,13 +38,13 @@
     const analysisTitle = document.querySelector(".timeline-analysis-title");
 
     if (chart) {
-      chart.setAttribute("aria-label", "Benchmark releases by release window");
+      chart.setAttribute("aria-label", "Unique benchmark totals by release window");
     }
     if (clearPeriod) {
       clearPeriod.textContent = "Clear period filter";
     }
     if (analysisTitle) {
-      setTextIfChanged(analysisTitle, "Growth analysis");
+      setTextIfChanged(analysisTitle, "Four-phase conclusions");
       analysisTitle.style.textAlign = "left";
     }
   }
@@ -82,7 +82,7 @@
 
   const currentScript = document.currentScript;
   const coreScript = document.createElement("script");
-  coreScript.src = new URL("app-v3-core.js?v=5", currentScript?.src || document.baseURI).href;
+  coreScript.src = new URL("app-v3-core.js?v=6", currentScript?.src || document.baseURI).href;
   coreScript.async = false;
   coreScript.onload = () => {
     configureTimeline();

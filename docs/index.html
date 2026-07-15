@@ -209,64 +209,68 @@
       <div class="section-heading split-heading">
         <div>
           <p class="eyebrow">Timeline</p>
-          <h2>From perceptual fidelity to interactive utility.</h2>
+          <h2>From &ldquo;Does the generated world look reasonable?&rdquo; to &ldquo;Is it really useful to the agent?&rdquo;</h2>
         </div>
         <p>
-          The corpus traces a shift from early visual, physical, and causal diagnostics toward
-          control fidelity, long-horizon persistence, and downstream agent utility.
+          The corpus traces a shift from visual and temporal quality, physical plausibility,
+          and causal and counterfactual reasoning toward spatial and state consistency,
+          long-horizon memory and state persistence, control fidelity and interactive dynamics,
+          and functional utility.
         </p>
       </div>
 
       <div class="timeline-shell">
         <div class="timeline-toolbar">
-          <span>Unique benchmarks by release window</span>
+          <span>Unique benchmark totals by release window</span>
           <button id="clear-year" class="small-button" type="button" hidden>Clear year filter</button>
         </div>
 
       <div class="timeline-detail">
         <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by year"></div>
-
-        <aside class="timeline-analysis" aria-label="Growth analysis from Figure 2">
-          <p class="timeline-analysis-title">Growth analysis from Figure 2</p>
-
-          <p>
-            Figure 2 reveals a shift not only in the volume of world-model benchmarks but also
-            in the composition of their evaluation targets. Only <strong>14 of the 82 benchmarks
-            (17.1%)</strong> were introduced before 2024, with early efforts concentrated primarily
-            on visual and temporal quality, controlled physical reasoning, and causal understanding.
-          </p>
-
-          <p>
-            The number of newly introduced benchmarks then increased from <strong>12 in 2024</strong>
-            to <strong>29 in 2025</strong>, representing a <strong>2.4-fold increase</strong> and
-            raising the cumulative total from <strong>26 to 55</strong>. A further
-            <strong>27 benchmarks</strong> appeared in the first two quarters of 2026, bringing
-            the corpus to <strong>82</strong>; consequently, <strong>56 of the 82 benchmarks
-            (68.3%)</strong> were introduced during 2025–2026.
-          </p>
-
-          <p>
-            This quantitative growth was accompanied by a broadening of evaluation scope.
-            All <strong>29 benchmarks</strong> classified under
-            <strong>Control Fidelity and Interactive Dynamics</strong> and all
-            <strong>seven Functional Utility benchmarks</strong> were introduced from 2024 onward,
-            while <strong>17 of the 19 Spatial and State Consistency benchmarks</strong> appeared
-            in 2025–2026. Long-horizon evaluation is even more recent:
-            <strong>nine of the eleven benchmarks</strong> in
-            <strong>Long-Horizon Memory and State Persistence</strong> were released in 2026.
-          </p>
-
-          <p>
-            Meanwhile, <strong>Physical Plausibility</strong> remained the most densely populated
-            category, comprising <strong>39 benchmarks</strong> and expanding from controlled
-            synthetic diagnostics to generative, embodied, and action-conditioned settings.
-            These statistics motivate the four phases summarized in Figure 2: an early emphasis
-            on appearance, physics, and causal reasoning; the emergence of controllability and
-            functional utility from 2024; rapid growth and target diversification in 2025; and
-            the rise of long-horizon and downstream-oriented evaluation in 2026.
-          </p>
-        </aside>
       </div>
+
+      <div class="timeline-target-summary" aria-labelledby="timeline-target-summary-title">
+        <div class="timeline-target-summary-heading">
+          <h3 id="timeline-target-summary-title">Evaluation target counts by release window</h3>
+          <p>Counts overlap because cross-category benchmarks appear in more than one target.</p>
+        </div>
+        <div id="timeline-target-matrix" class="timeline-target-scroll" aria-live="polite"></div>
+      </div>
+
+      <aside class="timeline-analysis" aria-label="Four-phase conclusions">
+        <p class="timeline-analysis-title">Four-phase conclusions</p>
+
+        <ol class="timeline-insights">
+          <li class="timeline-insight">
+            <span class="timeline-stage-number" aria-hidden="true">1</span>
+            <div>
+              <h3>Early benchmarks mainly focus on visual &amp; temporal quality, physical plausibility, and causal reasoning.</h3>
+              <p><strong>14/14 pre-2024 benchmarks</strong> cover visual/temporal quality, physical plausibility, or causal reasoning.</p>
+            </div>
+          </li>
+          <li class="timeline-insight">
+            <span class="timeline-stage-number" aria-hidden="true">2</span>
+            <div>
+              <h3>From 2024 onward, control fidelity &amp; interactive dynamics and functional utility begin to emerge.</h3>
+              <p>First appearing in 2024: <strong>6 control</strong> and <strong>2 utility</strong> benchmarks.</p>
+            </div>
+          </li>
+          <li class="timeline-insight">
+            <span class="timeline-stage-number" aria-hidden="true">3</span>
+            <div>
+              <h3>In 2025, benchmark growth accelerates, with broader coverage of spatial consistency, physical plausibility, and control fidelity.</h3>
+              <p><strong>29 new in 2025 (2.4× 2024)</strong>; target coverage includes 5 spatial, 14 physical, and 10 control.</p>
+            </div>
+          </li>
+          <li class="timeline-insight">
+            <span class="timeline-stage-number" aria-hidden="true">4</span>
+            <div>
+              <h3>By 2026, long-horizon memory &amp; persistence and functional utility become prominent frontier directions.</h3>
+              <p>2026 contributes <strong>9/11 long-horizon</strong> and <strong>4/7 utility</strong> benchmarks.</p>
+            </div>
+          </li>
+        </ol>
+      </aside>
     </div>
   </section>
 
@@ -378,6 +382,6 @@
     <div class="footer-links"><a href="#top">Back to top</a><a href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a><a href="assets/benchmarks.json" target="_blank">Data manifest</a><a href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a></div>
   </footer>
 
-  <script src="assets/app-v3.js?v=4" defer></script>
+  <script src="assets/app-v3.js?v=5" defer></script>
 </body>
 </html>
