@@ -5,48 +5,122 @@
 @import url("styles/part-5.css");
 @import url("styles/latest.css");
 
+/* Figure 2 timeline: five release windows plus a compact growth analysis. */
 .timeline-detail {
   display: grid;
-  grid-template-columns: minmax(560px, 1.55fr) minmax(300px, 0.95fr);
-  gap: 24px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, .75fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* The manuscript groups releases into five windows rather than nine years. */
+.timeline-detail .timeline-chart {
+  grid-template-columns: repeat(5, minmax(76px, 1fr));
+  min-width: 0;
+  min-height: 330px;
 }
 
 .timeline-analysis {
-  padding: 20px 22px;
-  border: 1px solid var(--line);
+  position: relative;
+  max-height: 330px;
+  overflow-y: auto;
+  padding: 21px 22px 22px;
+  border: 1px solid #dfe3f2;
   border-radius: 18px;
-  background: #fafbff;
+  background:
+    radial-gradient(circle at 100% 0, rgba(102, 117, 222, .11), transparent 42%),
+    linear-gradient(145deg, #fbfcff, #f6f7ff);
   box-shadow: var(--shadow-sm);
+  scrollbar-width: thin;
+  scrollbar-color: #b9c1ea transparent;
+}
+
+.timeline-analysis::-webkit-scrollbar {
+  width: 7px;
+}
+
+.timeline-analysis::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #b9c1ea;
 }
 
 .timeline-analysis-title {
-  margin: 0 0 14px;
+  position: sticky;
+  z-index: 1;
+  top: -21px;
+  margin: -21px -22px 15px;
+  padding: 18px 22px 13px;
+  border-bottom: 1px solid rgba(137, 149, 207, .22);
+  background: rgba(249, 250, 255, .94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   color: var(--accent);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 
 .timeline-analysis p {
-  margin: 0 0 14px;
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 13px;
-  line-height: 1.72;
+  font-size: 12px;
+  line-height: 1.68;
 }
 
-.timeline-analysis p:last-child {
-  margin-bottom: 0;
+.timeline-analysis p + p {
+  margin-top: 13px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(137, 149, 207, .17);
 }
 
 .timeline-analysis strong {
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 850;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .timeline-detail {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-detail .timeline-chart {
+    grid-template-columns: repeat(5, minmax(90px, 1fr));
+  }
+
+  .timeline-analysis {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .timeline-analysis-title {
+    position: static;
+    margin: -21px -22px 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .timeline-shell {
+    padding: 22px 18px;
+  }
+
+  .timeline-detail {
+    gap: 20px;
+  }
+
+  .timeline-detail .timeline-chart {
+    grid-template-columns: repeat(5, 88px);
+    min-height: 300px;
+    overflow-x: auto;
+    padding: 0 2px 8px;
+  }
+
+  .timeline-analysis {
+    padding: 19px 18px 20px;
+  }
+
+  .timeline-analysis-title {
+    margin: -19px -18px 14px;
+    padding: 16px 18px 12px;
   }
 }
