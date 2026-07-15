@@ -207,17 +207,68 @@
 
     <section class="section timeline-section" id="timeline">
       <div class="section-heading split-heading">
-        <div><p class="eyebrow">Timeline</p><h2>From perceptual fidelity to interactive utility.</h2></div>
-        <p>The corpus traces a shift from early visual, physical, and causal diagnostics toward control fidelity, long-horizon persistence, and downstream agent utility.</p>
+        <div>
+          <p class="eyebrow">Timeline</p>
+          <h2>From perceptual fidelity to interactive utility.</h2>
+        </div>
+        <p>
+          The corpus traces a shift from early visual, physical, and causal diagnostics toward
+          control fidelity, long-horizon persistence, and downstream agent utility.
+        </p>
       </div>
+
       <div class="timeline-shell">
         <div class="timeline-toolbar">
           <span>Unique benchmarks by release window</span>
-          <button id="clear-year" class="small-button" type="button" hidden>Clear period filter</button>
+          <button id="clear-year" class="small-button" type="button" hidden>Clear year filter</button>
         </div>
-        <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by period"></div>
+
+      <div class="timeline-detail">
+        <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by year"></div>
+
+        <aside class="timeline-analysis" aria-label="Growth analysis from Figure 2">
+          <p class="timeline-analysis-title">Growth analysis from Figure 2</p>
+
+          <p>
+            Figure 2 reveals a shift not only in the volume of world-model benchmarks but also
+            in the composition of their evaluation targets. Only <strong>14 of the 82 benchmarks
+            (17.1%)</strong> were introduced before 2024, with early efforts concentrated primarily
+            on visual and temporal quality, controlled physical reasoning, and causal understanding.
+          </p>
+
+          <p>
+            The number of newly introduced benchmarks then increased from <strong>12 in 2024</strong>
+            to <strong>29 in 2025</strong>, representing a <strong>2.4-fold increase</strong> and
+            raising the cumulative total from <strong>26 to 55</strong>. A further
+            <strong>27 benchmarks</strong> appeared in the first two quarters of 2026, bringing
+            the corpus to <strong>82</strong>; consequently, <strong>56 of the 82 benchmarks
+            (68.3%)</strong> were introduced during 2025–2026.
+          </p>
+
+          <p>
+            This quantitative growth was accompanied by a broadening of evaluation scope.
+            All <strong>29 benchmarks</strong> classified under
+            <strong>Control Fidelity and Interactive Dynamics</strong> and all
+            <strong>seven Functional Utility benchmarks</strong> were introduced from 2024 onward,
+            while <strong>17 of the 19 Spatial and State Consistency benchmarks</strong> appeared
+            in 2025–2026. Long-horizon evaluation is even more recent:
+            <strong>nine of the eleven benchmarks</strong> in
+            <strong>Long-Horizon Memory and State Persistence</strong> were released in 2026.
+          </p>
+
+          <p>
+            Meanwhile, <strong>Physical Plausibility</strong> remained the most densely populated
+            category, comprising <strong>39 benchmarks</strong> and expanding from controlled
+            synthetic diagnostics to generative, embodied, and action-conditioned settings.
+            These statistics motivate the four phases summarized in Figure 2: an early emphasis
+            on appearance, physics, and causal reasoning; the emergence of controllability and
+            functional utility from 2024; rapid growth and target diversification in 2025; and
+            the rise of long-horizon and downstream-oriented evaluation in 2026.
+          </p>
+        </aside>
       </div>
-    </section>
+    </div>
+  </section>
 
     <section class="section benchmark-section" id="benchmarks">
       <div class="section-heading split-heading benchmark-heading">
