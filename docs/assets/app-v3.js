@@ -28,18 +28,23 @@
     return expanded ? `${prefix}: ${expanded}` : prefix;
   }
 
+  function setTextIfChanged(element, nextText) {
+    if (element && element.textContent !== nextText) element.textContent = nextText;
+  }
+
   function updateCard(card) {
     const pills = [...card.querySelectorAll(".card-meta .meta-pill")];
-    if (pills[1]) pills[1].textContent = expandCodes(pills[1].textContent, "Protocol", LABELS.protocol);
-    if (pills[2]) pills[2].textContent = expandCodes(pills[2].textContent, "Metrics", LABELS.metrics);
-    if (pills[3]) pills[3].textContent = expandCodes(pills[3].textContent, "Data", LABELS.data);
+    if (pills[1]) setTextIfChanged(pills[1], expandCodes(pills[1].textContent, "Protocol", LABELS.protocol));
+    if (pills[2]) setTextIfChanged(pills[2], expandCodes(pills[2].textContent, "Metrics", LABELS.metrics));
+    if (pills[3]) setTextIfChanged(pills[3], expandCodes(pills[3].textContent, "Data", LABELS.data));
 
     const footerLabel = card.querySelector(".card-footer small");
     if (footerLabel) {
-      footerLabel.textContent = footerLabel.textContent
+      const cleaned = footerLabel.textContent
         .replace(/^Ref\.\s*\[\d+\]\s*·\s*/i, "")
         .trim();
-      if (!footerLabel.textContent) footerLabel.remove();
+      if (cleaned) setTextIfChanged(footerLabel, cleaned);
+      else footerLabel.remove();
     }
   }
 
