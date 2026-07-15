@@ -4,3 +4,49 @@
 @import url("styles/part-4.css");
 @import url("styles/part-5.css");
 @import url("styles/latest.css");
+
+.timeline-detail {
+  display: grid;
+  grid-template-columns: minmax(560px, 1.55fr) minmax(300px, 0.95fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.timeline-analysis {
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fafbff;
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-analysis-title {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-analysis p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.timeline-analysis p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-analysis strong {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+@media (max-width: 1080px) {
+  .timeline-detail {
+    grid-template-columns: 1fr;
+  }
+}
