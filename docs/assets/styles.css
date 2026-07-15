@@ -5,7 +5,19 @@
 @import url("styles/part-5.css");
 @import url("styles/latest.css");
 
-/* Figure 2 timeline: five release windows plus a compact growth analysis. */
+/*
+ * Figure 2 timeline.
+ * The analysis is now part of the HTML, so this file deliberately overrides
+ * the older JavaScript-injected two-column shell defined in latest.css.
+ */
+.timeline-shell {
+  display: block;
+}
+
+.timeline-shell > .timeline-toolbar {
+  margin-bottom: 24px;
+}
+
 .timeline-detail {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(360px, .75fr);
@@ -20,8 +32,13 @@
   min-height: 330px;
 }
 
+.timeline-detail .year-column {
+  grid-template-rows: 245px auto;
+}
+
 .timeline-analysis {
   position: relative;
+  min-width: 0;
   max-height: 330px;
   overflow-y: auto;
   padding: 21px 22px 22px;
@@ -113,6 +130,10 @@
     min-height: 300px;
     overflow-x: auto;
     padding: 0 2px 8px;
+  }
+
+  .timeline-detail .year-column {
+    grid-template-rows: 220px auto;
   }
 
   .timeline-analysis {
