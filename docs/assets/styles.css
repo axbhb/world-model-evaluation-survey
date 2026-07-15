@@ -96,6 +96,12 @@
   font-weight: 850;
 }
 
+/* Move the overview-card title and description upward while keeping the
+   absolutely positioned View action fixed at the bottom. */
+.principle-card h3 {
+  margin-top: 44px;
+}
+
 @media (max-width: 1180px) {
   .timeline-detail {
     grid-template-columns: 1fr;
