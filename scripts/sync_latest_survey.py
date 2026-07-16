@@ -144,7 +144,7 @@ def old_records():
 def generate_readme(manifest,target_by):
  old=old_records(); old['CausalSpatial']=manifest['added']['CausalSpatial']; rows=parse_rows(); lines=[f'# {TITLE}','',f'[![Project Page](https://img.shields.io/badge/Project-Page-5965d8)](https://axbhb.github.io/world-model-evaluation-survey/) [![Benchmarks](https://img.shields.io/badge/Benchmarks-82-2f8f63)](https://axbhb.github.io/world-model-evaluation-survey/#benchmarks)','',f'This repository accompanies **{TITLE}**. The latest manuscript contains **82 representative benchmarks** from **2018–2026**; **43** span multiple evaluation-target categories.','', 'The project page follows the paper’s four-dimensional taxonomy: **Evaluation Target × Evaluation Protocol × Evaluation Metrics × Evaluation Data**.','', 'Rows are intentionally repeated across target tables. `△` marks a cross-category benchmark. The corpus was last checked in July 2026.','', '## Contents']
  for sec,_ in SECTIONS: lines.append(f"- [{sec}](#{re.sub('[^a-z0-9 -]','',sec.lower()).replace(' ','-')})")
- lines += ['- [Supporting Evaluation Resources](#supporting-evaluation-resources)','', '## Column conventions','', '| Dimension | Codes | Meaning |','|:--|:--|:--|','| Protocol | `OL` / `CR` / `CL` | Open-Loop Prediction / Controlled Rollout / Closed-Loop Interaction |','| Metrics | `A` / `J` / `O` | Automatic / Judge-Based / Outcome-Grounded Metrics |','| Data | `RWD` / `SBG` / `SPTC` / `HCP` | Real-World Data Collection / Simulation-Based Generation / Scenario, Prompt, and Task Curation / Hybrid Construction Pipelines |']
+ lines += ['', '## Column conventions','', '| Dimension | Codes | Meaning |','|:--|:--|:--|','| Protocol | `OL` / `CR` / `CL` | Open-Loop Prediction / Controlled Rollout / Closed-Loop Interaction |','| Metrics | `A` / `J` / `O` | Automatic / Judge-Based / Outcome-Grounded Metrics |','| Data | `RWD` / `SBG` / `SPTC` / `HCP` | Real-World Data Collection / Simulation-Based Generation / Scenario, Prompt, and Task Curation / Hybrid Construction Pipelines |']
  for sec,groups in SECTIONS:
   lines += ['',f'## {sec}','', '_Aligned with Figure 4 and Tables 3–9 of the latest manuscript._']
   multi=len(groups)>1 or sec=='Functional Utility'
@@ -154,7 +154,7 @@ def generate_readme(manifest,target_by):
    for n in names.split(';'):
     ref,y,d,p,m,data=rows[n]; r=old[n]; tri=' △' if len(target_by[n])>1 else ''
     lines.append(f"| [**{n}{tri}**]({r.get('paperUrl','#')}) | {y} | {d} | {p} | {m} | {data} |")
- lines += ['', '## Supporting Evaluation Resources','', 'Discussed in the latest manuscript, but not counted in the 82-benchmark corpus or Tables 3–9:','', '- [**VideoScore**](https://arxiv.org/abs/2406.15252) — metric/resource discussed in §6.','- [**Scalable Policy Evaluation**](https://arxiv.org/abs/2511.11520) — supporting policy-evaluation study discussed in §4.8.2.','- [**stable-worldmodel**](https://arxiv.org/abs/2605.21800) — toolkit/platform discussed in §8.5.','', '## Machine-readable data','', '- [`docs/assets/benchmarks.json`](docs/assets/benchmarks.json): compact canonical manifest used by the explorer','- [Interactive project page](https://axbhb.github.io/world-model-evaluation-survey/)','']
+ lines += ['', '## Machine-readable data','', '- [`docs/assets/benchmarks.json`](docs/assets/benchmarks.json): compact canonical manifest used by the explorer','- [Interactive project page](https://axbhb.github.io/world-model-evaluation-survey/)','']
  (ROOT/'Readme.md').write_text('\n'.join(lines),encoding='utf-8')
 
 def patch_index():

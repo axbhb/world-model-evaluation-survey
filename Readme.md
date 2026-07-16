@@ -16,7 +16,6 @@ Rows are intentionally repeated across target tables. `△` marks a cross-catego
 - [Causal and Counterfactual Reasoning](#causal-and-counterfactual-reasoning)
 - [Control Fidelity and Interactive Dynamics](#control-fidelity-and-interactive-dynamics)
 - [Functional Utility](#functional-utility)
-- [Supporting Evaluation Resources](#supporting-evaluation-resources)
 
 ## Column conventions
 
@@ -256,14 +255,6 @@ _Aligned with Figure 4 and Tables 3–9 of the latest manuscript._
 | Benchmark | Year | Domain | Protocol | Metrics | Data |
 |:--|:--:|:--:|:--:|:--:|:--:|
 | [**WorldArena 2.0 △**](https://arxiv.org/abs/2605.17912) | 2026 | embodied | OL+CL | A+J+O | HCP |
-
-## Supporting Evaluation Resources
-
-Discussed in the latest manuscript, but not counted in the 82-benchmark corpus or Tables 3–9:
-
-- [**VideoScore**](https://arxiv.org/abs/2406.15252) — metric/resource discussed in §6.
-- [**Scalable Policy Evaluation**](https://arxiv.org/abs/2511.11520) — supporting policy-evaluation study discussed in §4.8.2.
-- [**stable-worldmodel**](https://arxiv.org/abs/2605.21800) — toolkit/platform discussed in §8.5.
 
 ## Machine-readable data
 
