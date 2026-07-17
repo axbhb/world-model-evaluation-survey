@@ -79,9 +79,11 @@ for key in (
 ):
     assert metadata[key] == manifest[key]
 
-assert "`OL` = Open-Loop Evaluation; `CL` = Closed-Loop Interaction" in readme
-assert "`P` = Prediction-Level Metrics; `O` = Downstream Outcome Metrics" in readme
-assert "Functional Utility | 8" in readme
+assert "`OL` Open-Loop Evaluation; `CL` Closed-Loop Interaction" in readme
+assert "`P` Prediction-Level Metrics; `O` Downstream Outcome Metrics" in readme
+assert "Functional Utility (`T7`) | 8" in readme
+assert "**PEDRA**" in readme
+assert "**WR-Arena △**" in readme
 assert "Controlled Rollout" not in readme
 assert "Automatic / Judge-Based / Outcome-Grounded" not in readme
 
