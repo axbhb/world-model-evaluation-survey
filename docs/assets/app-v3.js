@@ -1,14 +1,12 @@
 (() => {
   const LABELS = {
     protocol: {
-      OL: "Open-Loop Prediction",
-      CR: "Controlled Rollout",
+      OL: "Open-Loop Evaluation",
       CL: "Closed-Loop Interaction",
     },
     metrics: {
-      A: "Automatic Metrics",
-      J: "Judge-Based Metrics",
-      O: "Outcome-Grounded Metrics",
+      P: "Prediction-Level Metrics",
+      O: "Downstream Outcome Metrics",
     },
     data: {
       RWD: "Real-World Data Collection",
@@ -18,8 +16,14 @@
     },
   };
 
+  function setTextIfChanged(element, nextText) {
+    if (element && element.textContent !== nextText) element.textContent = nextText;
+  }
+
   function expandCodes(text, prefix, labels) {
-    const raw = String(text || "").replace(new RegExp(`^${prefix}\\s*:?\\s*`, "i"), "").trim();
+    const raw = String(text || "")
+      .replace(new RegExp(`^${prefix}\\s*:?\\s*`, "i"), "")
+      .trim();
     const expanded = raw
       .split(/\s*[·+]\s*/)
       .filter(Boolean)
@@ -28,32 +32,74 @@
     return expanded ? `${prefix}: ${expanded}` : prefix;
   }
 
-  function setTextIfChanged(element, nextText) {
-    if (element && element.textContent !== nextText) element.textContent = nextText;
+  function loadLatestStyles() {
+    if (document.querySelector('link[href$="latest-schema.css"]')) return;
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = new URL("latest-schema.css?v=1", document.currentScript?.src || document.baseURI).href;
+    document.head.append(link);
   }
 
-  function configureTimeline() {
-    const chart = document.querySelector("#timeline-chart");
-    const clearPeriod = document.querySelector("#clear-year");
-    const analysisTitle = document.querySelector(".timeline-analysis-title");
+  function rewriteStaticPageCopy() {
+    const protocolCaption = document.querySelector(".protocol-node .viz-caption");
+    const metricsCaption = document.querySelector(".metrics-node .viz-caption");
+    setTextIfChanged(protocolCaption, "open-loop · closed-loop");
+    setTextIfChanged(metricsCaption, "prediction-level · downstream");
 
-    if (chart) {
-      chart.setAttribute("aria-label", "Unique benchmark totals by release window");
+    const stats = [...document.querySelectorAll(".stat-strip > div")];
+    if (stats[3]) {
+      const strong = stats[3].querySelector("strong");
+      const span = stats[3].querySelector("span");
+      setTextIfChanged(strong, "2 / 2");
+      setTextIfChanged(span, "protocol classes / metric levels");
     }
-    if (clearPeriod) {
-      clearPeriod.textContent = "Clear period filter";
+
+    const cards = [...document.querySelectorAll(".principle-card")];
+    if (cards[1]) {
+      setTextIfChanged(
+        cards[1].querySelector("p"),
+        "Distinguishes open-loop evaluation from feedback-driven closed-loop interaction."
+      );
     }
-    if (analysisTitle) {
-      setTextIfChanged(analysisTitle, "Four-phase conclusions");
-      analysisTitle.style.textAlign = "left";
+    if (cards[2]) {
+      setTextIfChanged(
+        cards[2].querySelector("p"),
+        "Separates prediction-level evidence from downstream outcome evidence."
+      );
     }
+
+    const phaseFour = document.querySelector(".timeline-insight:nth-child(4) p");
+    if (phaseFour) {
+      phaseFour.innerHTML =
+        '2026 contributes <strong>9/11 long-horizon</strong> and <strong>5/8 utility</strong> benchmarks.';
+    }
+
+    const communityMetricCopy = [...document.querySelectorAll(".community-grid article p")]
+      .find((node) => node.textContent.includes("metric family"));
+    if (communityMetricCopy) {
+      communityMetricCopy.textContent = communityMetricCopy.textContent.replace(
+        "metric family",
+        "metric level"
+      );
+    }
+
+    const chart = document.querySelector("#timeline-chart");
+    if (chart) chart.setAttribute("aria-label", "Unique benchmark totals by release window");
+    const clearPeriod = document.querySelector("#clear-year");
+    if (clearPeriod) setTextIfChanged(clearPeriod, "Clear period filter");
   }
 
   function updateCard(card) {
     const pills = [...card.querySelectorAll(".card-meta .meta-pill")];
-    if (pills[1]) setTextIfChanged(pills[1], expandCodes(pills[1].textContent, "Protocol", LABELS.protocol));
-    if (pills[2]) setTextIfChanged(pills[2], expandCodes(pills[2].textContent, "Metrics", LABELS.metrics));
-    if (pills[3]) setTextIfChanged(pills[3], expandCodes(pills[3].textContent, "Data", LABELS.data));
+    if (pills[1]) {
+      setTextIfChanged(pills[1], expandCodes(pills[1].textContent, "Protocol", LABELS.protocol));
+    }
+    if (pills[2]) {
+      setTextIfChanged(pills[2], expandCodes(pills[2].textContent, "Metrics", LABELS.metrics));
+    }
+    if (pills[3]) {
+      setTextIfChanged(pills[3], expandCodes(pills[3].textContent, "Data", LABELS.data));
+    }
 
     const footerLabel = card.querySelector(".card-footer small");
     if (footerLabel) {
@@ -69,7 +115,32 @@
     root.querySelectorAll(".benchmark-card").forEach(updateCard);
   }
 
-  configureTimeline();
+  async function loadCanonicalExplorer() {
+    const sourceUrl = new URL("app-v3-core.js?v=7", document.currentScript?.src || document.baseURI);
+    const response = await fetch(sourceUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status} while loading explorer core`);
+
+    let source = await response.text();
+    source = source
+      .replace(
+        'const PROTOCOLS = ["OL", "CR", "CL"];',
+        'const PROTOCOLS = ["OL", "CL"];'
+      )
+      .replace(
+        'const METRICS = ["A", "J", "O"];',
+        'const METRICS = ["P", "O"];'
+      );
+
+    if (source.includes('const PROTOCOLS = ["OL", "CR", "CL"];') ||
+        source.includes('const METRICS = ["A", "J", "O"];')) {
+      throw new Error("Explorer core taxonomy patch did not apply");
+    }
+
+    new Function(source)();
+  }
+
+  loadLatestStyles();
+  rewriteStaticPageCopy();
 
   const grid = document.querySelector("#benchmark-grid");
   if (grid) {
@@ -77,17 +148,19 @@
       childList: true,
       subtree: true,
     });
-    updateCards(grid);
   }
 
-  const currentScript = document.currentScript;
-  const coreScript = document.createElement("script");
-  coreScript.src = new URL("app-v3-core.js?v=6", currentScript?.src || document.baseURI).href;
-  coreScript.async = false;
-  coreScript.onload = () => {
-    configureTimeline();
-    updateCards();
-  };
-  coreScript.onerror = () => console.error("Could not load app-v3-core.js");
-  document.head.append(coreScript);
+  loadCanonicalExplorer()
+    .then(() => {
+      rewriteStaticPageCopy();
+      updateCards();
+    })
+    .catch((error) => {
+      console.error(error);
+      if (grid) {
+        grid.innerHTML =
+          `<div class="empty-state"><h3>Benchmark data could not be loaded.</h3>` +
+          `<p>${String(error.message || error)}</p></div>`;
+      }
+    });
 })();

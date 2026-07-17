@@ -1,0 +1,19 @@
+/* Latest manuscript schema: two protocol classes and two metric levels. */
+.matrix {
+  min-width: 700px;
+  grid-template-columns: minmax(250px, 1.6fr) repeat(2, minmax(170px, 1fr));
+}
+
+.viz-caption {
+  font-size: 9.5px;
+}
+
+.stat-strip strong {
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .matrix {
+    min-width: 650px;
+  }
+}

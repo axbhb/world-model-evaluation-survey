@@ -5,14 +5,12 @@
   "total": 82,
   "crossCategory": 43,
   "protocolLabels": {
-    "OL": "Open-Loop Prediction",
-    "CR": "Controlled Rollout",
+    "OL": "Open-Loop Evaluation",
     "CL": "Closed-Loop Interaction"
   },
   "metricLabels": {
-    "A": "Automatic Metrics",
-    "J": "Judge-Based Metrics",
-    "O": "Outcome-Grounded Metrics"
+    "P": "Prediction-Level Metrics",
+    "O": "Downstream Outcome Metrics"
   },
   "dataLabels": {
     "RWD": "Real-World Data Collection",
