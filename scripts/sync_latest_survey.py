@@ -79,13 +79,32 @@ for key in (
 ):
     assert metadata[key] == manifest[key]
 
-assert "`OL` Open-Loop Evaluation; `CL` Closed-Loop Interaction" in readme
-assert "`P` Prediction-Level Metrics; `O` Downstream Outcome Metrics" in readme
-assert "Functional Utility (`T7`) | 8" in readme
-assert "**PEDRA**" in readme
-assert "**WR-Arena △**" in readme
-assert "Controlled Rollout" not in readme
-assert "Automatic / Judge-Based / Outcome-Grounded" not in readme
+# README is a reader-facing literature index rather than a copy of Tables 3–9.
+assert readme.count("| Article | Year | Venue | Code | Project Page |") == 12
+assert "| Benchmark | Year | Domain | Protocol | Metrics | Data |" not in readme
+for heading in (
+    "## Visual and Temporal Quality",
+    "## Spatial and State Consistency",
+    "## Long-Horizon Memory and State Persistence",
+    "## Physical Plausibility",
+    "## Causal and Counterfactual Reasoning",
+    "## Control Fidelity and Interactive Dynamics",
+    "## Functional Utility",
+    "### Causal Reasoning over Observed Worlds",
+    "### Counterfactual Reasoning over Intervened Worlds",
+    "### Pre-specified Control Fidelity",
+    "### Interactive Action Fidelity",
+    "### World Model as Data Engine",
+    "### World Model as Policy Evaluator",
+    "### World Model as Planner",
+    "### World Model as Interactive Training Environment",
+):
+    assert heading in readme
+assert "| Functional Utility | 8 |" in readme
+assert "PEDRA: Evaluating the Realism" in readme
+assert "World reasoning arena" in readme
+assert "https://github.com/Vchitect/VBench" in readme
+assert "[Project Page](https://world-arena.ai/)" in readme
 
 assert 'const PROTOCOLS = ["OL", "CL"];' in wrapper
 assert 'const METRICS = ["P", "O"];' in wrapper
@@ -96,6 +115,7 @@ assert "latest-schema.css" in wrapper
 assert "repeat(2" in css
 
 print(
-    "Validated latest manuscript snapshot: 82 benchmarks, 43 cross-category, "
-    "7 targets, 2 protocols, 2 metric levels, and 4 data sources."
+    "Validated latest manuscript snapshot and per-category literature-index README: "
+    "82 benchmarks, 43 cross-category, 7 targets, 2 protocols, "
+    "2 metric levels, and 4 data sources."
 )
