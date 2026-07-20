@@ -16,10 +16,10 @@ records = manifest["records"]
 assert manifest["title"] == "A Survey of World Model Benchmarks"
 assert manifest["version"] == "July 2026 manuscript snapshot"
 assert manifest["framework"] == "Target–Protocol–Metrics–Data"
-assert manifest["schemaVersion"] == 4
-assert manifest["total"] == 82
-assert manifest["crossCategory"] == 43
-assert len(records) == 82
+assert manifest["schemaVersion"] == 5
+assert manifest["total"] == 88
+assert manifest["crossCategory"] == 49
+assert len(records) == 88
 assert manifest["protocolLabels"] == {
     "OL": "Open-Loop Evaluation",
     "CL": "Closed-Loop Interaction",
@@ -41,23 +41,47 @@ data_codes = {
 assert protocol_codes <= {"OL", "CL"}
 assert metric_codes <= {"P", "O"}
 assert data_codes <= {"RWD", "SBG", "SPTC", "HCP"}
-assert "CR" not in protocol_codes
-assert not ({"A", "J"} & metric_codes)
 
 assert Counter(row[1] for row in records.values()) == Counter({
     2018: 1, 2019: 1, 2020: 3, 2021: 2, 2022: 3,
-    2023: 4, 2024: 12, 2025: 29, 2026: 27,
+    2023: 4, 2024: 12, 2025: 32, 2026: 30,
 })
 target_counts = Counter(
     code for row in records.values() for code in str(row[6]).split("+") if code
 )
 assert target_counts == Counter({
-    "T1": 20, "T2": 19, "T3": 11, "T4": 39,
-    "T5": 22, "T6": 29, "T7": 8,
+    "T1": 24, "T2": 25, "T3": 14, "T4": 44,
+    "T5": 27, "T6": 33, "T7": 10,
 })
-assert sum(len(str(row[6]).split("+")) > 1 for row in records.values()) == 43
+assert sum(len(str(row[6]).split("+")) > 1 for row in records.values()) == 49
 
-# High-leverage regression checks from the revised manuscript.
+# High-leverage checks for the six additions in the latest manuscript.
+assert records["WoW-World-Eval"] == [
+    79, 2026, "embodied", "OL", "P+O", "HCP",
+    "T1+T2+T3+T4+T5+T6+T7", "S1+S2+S3+S5+S9",
+]
+assert records["RBench"] == [
+    80, 2026, "embodied", "OL", "P", "RWD",
+    "T1+T2+T3+T4+T5+T6", "S1+S2+S3+S5",
+]
+assert records["PAI-Bench"] == [
+    81, 2025, "video", "OL", "P", "HCP",
+    "T1+T2+T4+T5+T6", "S1+S2+S3+S5",
+]
+assert records["EZS-Bench"] == [
+    82, 2026, "embodied", "OL", "P", "HCP",
+    "T1+T2+T4+T6", "S1+S2+S5",
+]
+assert records["AutumnBench"] == [
+    92, 2025, "game", "CL", "P+O", "SBG",
+    "T2+T3+T5+T7", "S4+S9",
+]
+assert records["MVP"] == [
+    93, 2025, "video", "OL", "P", "HCP",
+    "T2+T4+T5", "S4",
+]
+
+# Existing regression checks retained from the prior snapshot.
 assert records["PEDRA"] == [76, 2025, "video", "OL", "P", "RWD", "T1", "S1+S2"]
 assert manifest["aliases"]["Pedestrian sim."] == "PEDRA"
 assert records["WorldMark"][5] == "HCP"
@@ -79,7 +103,7 @@ for key in (
 ):
     assert metadata[key] == manifest[key]
 
-# README is a reader-facing literature index rather than a copy of Tables 3–9.
+# README remains a reader-facing literature index rather than a copy of Tables 3–9.
 assert readme.count("| Article | Year | Venue | Code | Project Page |") == 12
 assert "| Benchmark | Year | Domain | Protocol | Metrics | Data |" not in readme
 for heading in (
@@ -100,22 +124,22 @@ for heading in (
     "### World Model as Interactive Training Environment",
 ):
     assert heading in readme
-assert "| Functional Utility | 8 |" in readme
-assert "PEDRA: Evaluating the Realism" in readme
-assert "World reasoning arena" in readme
-assert "https://github.com/Vchitect/VBench" in readme
-assert "[Project Page](https://world-arena.ai/)" in readme
+assert "| Functional Utility | 10 |" in readme
+for benchmark in (
+    "WoW-World-Eval", "RBench", "PAI-Bench",
+    "EZS-Bench", "AutumnBench", "MVP",
+):
+    assert benchmark in readme
 
 assert 'const PROTOCOLS = ["OL", "CL"];' in wrapper
 assert 'const METRICS = ["P", "O"];' in wrapper
 assert "Open-Loop Evaluation" in wrapper
 assert "Prediction-Level Metrics" in wrapper
-assert "5/8 utility" in wrapper
+assert "6/10 utility" in wrapper
 assert "latest-schema.css" in wrapper
 assert "repeat(2" in css
 
 print(
-    "Validated latest manuscript snapshot and per-category literature-index README: "
-    "82 benchmarks, 43 cross-category, 7 targets, 2 protocols, "
-    "2 metric levels, and 4 data sources."
+    "Validated the latest survey snapshot: 88 benchmarks, 49 cross-category, "
+    "7 targets, 2 protocols, 2 metric levels, and 4 data sources."
 )
