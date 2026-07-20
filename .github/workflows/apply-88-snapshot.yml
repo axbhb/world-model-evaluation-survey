@@ -7,6 +7,8 @@ on:
     paths:
       - "scripts/apply_88_snapshot.py"
       - ".github/workflows/apply-88-snapshot.yml"
+  issues:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
@@ -18,6 +20,7 @@ concurrency:
 
 jobs:
   align:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, '[sync-88]')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
