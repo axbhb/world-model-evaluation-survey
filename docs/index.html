@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="World Model Benchmarks Survey">
   <meta property="og:title" content="A Survey of World Model Benchmarks">
-  <meta property="og:description" content="Explore 82 world-model benchmarks through the Target–Protocol–Metrics–Data taxonomy.">
+  <meta property="og:description" content="Explore 88 world-model benchmarks through the Target–Protocol–Metrics–Data taxonomy.">
   <meta property="og:url" content="https://axbhb.github.io/world-model-evaluation-survey/">
   <meta property="og:image" content="https://axbhb.github.io/world-model-evaluation-survey/assets/social-preview.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -72,7 +72,7 @@
             <a class="button" href="#benchmarks">Explore benchmarks</a>
             <a class="button" href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-          <div class="snapshot-note"><span class="status-dot"></span> Latest manuscript snapshot · 82 benchmarks · 43 cross-category · checked July 2026</div>
+          <div class="snapshot-note"><span class="status-dot"></span> Latest manuscript snapshot · 88 benchmarks · 49 cross-category · checked July 2026</div>
         </div>
 
         <div class="hero-visual" aria-label="Target, protocol, metrics, and data framework illustration">
@@ -106,14 +106,14 @@
               <text x="22" y="34" class="viz-kicker">D2 · PROTOCOL</text>
               <text x="22" y="65" class="viz-title">How is the model</text>
               <text x="22" y="91" class="viz-title">evaluated?</text>
-              <text x="22" y="112" class="viz-caption">OL · CR · CL</text>
+              <text x="22" y="112" class="viz-caption">OL · CL</text>
             </g>
             <g class="viz-node metrics-node" transform="translate(472 66)">
               <rect width="210" height="128" rx="20"/>
               <text x="22" y="34" class="viz-kicker">D3 · METRICS</text>
               <text x="22" y="65" class="viz-title">Which metrics</text>
               <text x="22" y="91" class="viz-title">are used?</text>
-              <text x="22" y="112" class="viz-caption">automatic · judge · outcome</text>
+              <text x="22" y="112" class="viz-caption">prediction-level · downstream</text>
             </g>
             <g class="viz-node data-node" transform="translate(472 366)">
               <rect width="210" height="128" rx="20"/>
@@ -132,7 +132,7 @@
           </svg>
         </div>
       </div>
-      <div class="stat-strip" aria-label="Survey statistics"><div><strong id="stat-total">82</strong><span>representative benchmarks</span></div><div><strong id="stat-cross">43</strong><span>cross-category benchmarks</span></div><div><strong>7</strong><span>evaluation targets</span></div><div><strong>3</strong><span>protocol / metric families</span></div><div><strong>4</strong><span>evaluation data sources</span></div></div></section>
+      <div class="stat-strip" aria-label="Survey statistics"><div><strong id="stat-total">88</strong><span>representative benchmarks</span></div><div><strong id="stat-cross">49</strong><span>cross-category benchmarks</span></div><div><strong>7</strong><span>evaluation targets</span></div><div><strong>2 / 2</strong><span>protocol classes / metric levels</span></div><div><strong>4</strong><span>evaluation data sources</span></div></div></section>
 
     <section class="section" id="overview">
       <div class="section-heading split-heading">
@@ -152,13 +152,13 @@
         <article class="principle-card protocol-card">
           <span class="card-index">02</span>
           <h3>Evaluation Protocol</h3>
-          <p>Distinguishes open-loop prediction, controlled rollout, and closed-loop interaction.</p>
+          <p>Distinguishes open-loop evaluation from feedback-driven closed-loop interaction.</p>
           <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-protocols">View protocols <span>→</span></button>
         </article>
         <article class="principle-card metrics-card">
           <span class="card-index">03</span>
           <h3>Evaluation Metrics</h3>
-          <p>Distinguishes automatic, judge-based, and outcome-grounded metric families.</p>
+          <p>Separates prediction-level evidence from downstream outcome evidence.</p>
           <button class="text-action taxonomy-jump" data-scroll-target="taxonomy-metrics">View metrics <span>→</span></button>
         </article>
         <article class="principle-card data-card">
@@ -222,11 +222,11 @@
       <div class="timeline-shell">
         <div class="timeline-toolbar">
           <span>Unique benchmark totals by release window</span>
-          <button id="clear-year" class="small-button" type="button" hidden>Clear year filter</button>
+          <button id="clear-year" class="small-button" type="button" hidden>Clear period filter</button>
         </div>
 
       <div class="timeline-detail">
-        <div id="timeline-chart" class="timeline-chart" aria-label="Benchmark releases by year"></div>
+        <div id="timeline-chart" class="timeline-chart" aria-label="Unique benchmark totals by release window"></div>
       </div>
 
       <div class="timeline-target-summary" aria-labelledby="timeline-target-summary-title">
@@ -259,14 +259,14 @@
             <span class="timeline-stage-number" aria-hidden="true">3</span>
             <div>
               <h3>In 2025, benchmark growth accelerates, with broader coverage of spatial consistency, physical plausibility, and control fidelity.</h3>
-              <p><strong>29 new in 2025 (2.4× 2024)</strong>; target coverage includes 5 spatial, 14 physical, and 10 control.</p>
+              <p><strong>32 new in 2025 (2.7× 2024)</strong>; target coverage includes 8 spatial, 16 physical, and 11 control.</p>
             </div>
           </li>
           <li class="timeline-insight">
             <span class="timeline-stage-number" aria-hidden="true">4</span>
             <div>
               <h3>By 2026, long-horizon memory &amp; persistence and functional utility become prominent frontier directions.</h3>
-              <p>2026 contributes <strong>9/11 long-horizon</strong> and <strong>4/7 utility</strong> benchmarks.</p>
+              <p>2026 contributes <strong>11/14 long-horizon</strong> and <strong>6/10 utility</strong> benchmarks.</p>
             </div>
           </li>
         </ol>
@@ -277,7 +277,7 @@
     <section class="section benchmark-section" id="benchmarks">
       <div class="section-heading split-heading benchmark-heading">
         <div><p class="eyebrow">Benchmark Explorer</p><h2>Browse the latest paper snapshot.</h2></div>
-        <p>Search and filter the 82 representative benchmarks coded in Figure 4 and Tables 3–9 of the latest manuscript.</p>
+        <p>Search and filter the 88 representative benchmarks coded in Figure 4 and Tables 3–9 of the latest manuscript.</p>
       </div>
 
       <div class="explorer-shell">
@@ -321,7 +321,7 @@
             <label class="sort-control"><span>Sort</span><select id="benchmark-sort"><option value="recent">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
           </div>
           <div id="active-filters" class="active-filters" aria-live="polite"></div>
-          <div class="result-row"><p><strong id="result-count">82</strong> results</p><p class="legend-note"><span class="cross-symbol">△</span> cross-category in the survey</p></div>
+          <div class="result-row"><p><strong id="result-count">88</strong> results</p><p class="legend-note"><span class="cross-symbol">△</span> cross-category in the survey</p></div>
           <div id="benchmark-grid" class="benchmark-grid"></div>
           <div id="empty-state" class="empty-state" hidden><h3>No benchmarks match these filters.</h3><p>Try removing one or more filters or changing the search query.</p><button class="button" id="empty-clear" type="button">Reset explorer</button></div>
         </div>
@@ -345,7 +345,7 @@
         <article>
           <span class="community-icon" aria-hidden="true">✓</span>
           <h3>Correct metadata</h3>
-          <p>Flag an incorrect year, domain, protocol, metric family, data source, title, category, or link.</p>
+          <p>Flag an incorrect year, domain, protocol, metric level, data source, title, category, or link.</p>
           <a href="https://github.com/axbhb/world-model-evaluation-survey/issues/new?title=Metadata%20correction%3A%20&body=Benchmark%3A%0AField%20to%20correct%3A%0ACurrent%20value%3A%0AProposed%20value%3A%0ASource%3A%0A" target="_blank" rel="noreferrer">Report a correction <span>↗</span></a>
         </article>
         <article>
@@ -382,6 +382,6 @@
     <div class="footer-links"><a href="#top">Back to top</a><a href="https://github.com/axbhb/world-model-evaluation-survey/blob/main/Readme.md" target="_blank" rel="noreferrer">Benchmark list</a><a href="assets/benchmarks.json" target="_blank">Data manifest</a><a href="https://github.com/axbhb/world-model-evaluation-survey" target="_blank" rel="noreferrer">GitHub</a></div>
   </footer>
 
-  <script src="assets/app-v3.js?v=5" defer></script>
+  <script src="assets/app-v3.js?v=6" defer></script>
 </body>
 </html>
