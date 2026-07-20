@@ -1,5 +1,6 @@
 name: Apply 88-benchmark manuscript snapshot
 
+# This workflow applies the latest uploaded manuscript snapshot to the data, README, and Pages site.
 on:
   push:
     branches: ["main"]
