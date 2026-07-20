@@ -9,6 +9,8 @@ on:
       - ".github/workflows/apply-88-snapshot.yml"
   issues:
     types: [opened]
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
