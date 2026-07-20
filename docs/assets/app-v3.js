@@ -47,11 +47,24 @@
     setTextIfChanged(metricsCaption, "prediction-level · downstream");
 
     const stats = [...document.querySelectorAll(".stat-strip > div")];
+    if (stats[0]) {
+      setTextIfChanged(stats[0].querySelector("strong"), "88");
+      setTextIfChanged(stats[0].querySelector("span"), "representative benchmarks");
+    }
+    if (stats[1]) {
+      setTextIfChanged(stats[1].querySelector("strong"), "49");
+      setTextIfChanged(stats[1].querySelector("span"), "cross-category benchmarks");
+    }
     if (stats[3]) {
       const strong = stats[3].querySelector("strong");
       const span = stats[3].querySelector("span");
       setTextIfChanged(strong, "2 / 2");
       setTextIfChanged(span, "protocol classes / metric levels");
+    }
+
+    const snapshot = document.querySelector(".snapshot-note");
+    if (snapshot) {
+      snapshot.innerHTML = '<span class="status-dot"></span> Latest manuscript snapshot · 88 benchmarks · 49 cross-category · checked July 2026';
     }
 
     const cards = [...document.querySelectorAll(".principle-card")];
@@ -68,11 +81,26 @@
       );
     }
 
+    const phaseThree = document.querySelector(".timeline-insight:nth-child(3) p");
+    if (phaseThree) {
+      phaseThree.innerHTML =
+        '<strong>32 new in 2025 (2.7× 2024)</strong>; target coverage includes 8 spatial, 16 physical, and 11 control.';
+    }
+
     const phaseFour = document.querySelector(".timeline-insight:nth-child(4) p");
     if (phaseFour) {
       phaseFour.innerHTML =
-        '2026 contributes <strong>9/11 long-horizon</strong> and <strong>5/8 utility</strong> benchmarks.';
+        '2026 contributes <strong>11/14 long-horizon</strong> and <strong>6/10 utility</strong> benchmarks.';
     }
+
+    const benchmarkSummary = document.querySelector("#benchmarks .benchmark-heading > p");
+    if (benchmarkSummary) {
+      benchmarkSummary.textContent =
+        "Search and filter the 88 representative benchmarks coded in Figure 4 and Tables 3–9 of the latest manuscript.";
+    }
+
+    const resultCount = document.querySelector("#result-count");
+    if (resultCount && resultCount.textContent === "82") resultCount.textContent = "88";
 
     const communityMetricCopy = [...document.querySelectorAll(".community-grid article p")]
       .find((node) => node.textContent.includes("metric family"));
@@ -116,7 +144,7 @@
   }
 
   async function loadCanonicalExplorer() {
-    const sourceUrl = new URL("app-v3-core.js?v=7", document.currentScript?.src || document.baseURI);
+    const sourceUrl = new URL("app-v3-core.js?v=8", document.currentScript?.src || document.baseURI);
     const response = await fetch(sourceUrl, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status} while loading explorer core`);
 
