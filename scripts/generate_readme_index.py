@@ -55,7 +55,7 @@ def row(n):
     title=r.get('title') or n
     paper=r.get('paperUrl') or f'https://scholar.google.com/scholar?q={quote_plus(title)}'
     marker=' △' if len(top.get(n,set()))>1 else ''
-    year=r.get('year')
+    year=manifest['records'][n][1]
     venue=venue_override.get(n,r.get('venue') or 'arXiv')
     return f"| [**{n}{marker}**]({paper}) | {year} | {venue} | {link('Code',code_links.get(n))} | {link('Project Page',project_pages.get(n))} |"
 def table(names): return ['| Article | Year | Venue | Code | Project Page |','|:--|:--:|:--:|:--:|:--:|']+[row(n) for n in names]
