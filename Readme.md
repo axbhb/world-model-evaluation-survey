@@ -56,10 +56,10 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**PEDRA**](https://arxiv.org/abs/2510.20182) | 2025 | CVPR | - | - |
 | [**Gen-ViRe**](https://arxiv.org/abs/2511.13853) | 2025 | arXiv | - | - |
 | [**iWorld-Bench △**](https://arxiv.org/abs/2605.03941) | 2026 | arXiv | - | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | None | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
-| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | None | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | 2025 | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
+| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | 2026 | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
 
 ## Spatial and State Consistency
 
@@ -80,16 +80,16 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**MIND △**](https://arxiv.org/abs/2602.08025) | 2026 | arXiv | - | - |
 | [**MBench △**](https://arxiv.org/abs/2606.00793) | 2026 | arXiv | - | - |
 | [**STEVO-Bench △**](https://arxiv.org/abs/2603.13215) | 2026 | arXiv | - | - |
-| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | None | arXiv | - | - |
+| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | 2026 | arXiv | - | - |
 | [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | arXiv | - | - |
 | [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | arXiv | - | - |
 | [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | arXiv | - | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | None | ICML | - | - |
-| [**MVP △**](https://arxiv.org/abs/2506.09987) | None | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
-| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | None | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
-| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | None | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | 2025 | ICML | - | - |
+| [**MVP △**](https://arxiv.org/abs/2506.09987) | 2025 | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
+| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | 2025 | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
+| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | 2026 | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
 
 ## Long-Horizon Memory and State Persistence
 
@@ -106,9 +106,9 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**HTEWorld**](https://arxiv.org/abs/2605.19957) | 2026 | arXiv | - | - |
 | [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | CVPR | [Code](https://github.com/fffstrong/RoboWM-Bench) | [Project Page](https://robowm-bench.github.io/RoboWM-Bench/) |
 | [**iWorld-Bench △**](https://arxiv.org/abs/2605.03941) | 2026 | arXiv | - | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | None | ICML | - | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | 2025 | ICML | - | - |
 
 ## Physical Plausibility
 
@@ -153,11 +153,11 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | arXiv | - | - |
 | [**WorldOlympiad △**](https://arxiv.org/abs/2606.11129) | 2026 | arXiv | - | - |
 | [**ACWM-Phys △**](https://arxiv.org/abs/2605.08567) | 2026 | arXiv | - | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**MVP △**](https://arxiv.org/abs/2506.09987) | None | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
-| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | None | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
-| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | None | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**MVP △**](https://arxiv.org/abs/2506.09987) | 2025 | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
+| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | 2025 | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
+| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | 2026 | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
 
 ## Causal and Counterfactual Reasoning
 
@@ -179,13 +179,13 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**Physics-IQ △**](https://arxiv.org/abs/2501.09038) | 2025 | WACV | [Code](https://github.com/google-deepmind/physics-iq-benchmark) | [Project Page](https://physics-iq.github.io/) |
 | [**WorldPrediction △**](https://arxiv.org/abs/2506.04363) | 2025 | ICML Workshop | - | [Project Page](https://github.com/worldprediction/worldprediction.github.io) |
 | [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | arXiv | [Code](https://github.com/MBZUAI-IFM/WR-Arena) | - |
-| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | None | arXiv | - | - |
+| [**CausalSpatial △**](https://arxiv.org/abs/2601.13304) | 2026 | arXiv | - | - |
 | [**T2VWorldBench △**](https://arxiv.org/abs/2507.18107) | 2025 | WACV | - | - |
 | [**VACT △**](https://arxiv.org/abs/2503.06163) | 2025 | arXiv | - | - |
 | [**HOCA-Bench △**](https://arxiv.org/abs/2602.19571) | 2026 | arXiv | - | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | None | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | 2025 | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
 
 ### Counterfactual Reasoning over Intervened Worlds
 
@@ -202,8 +202,8 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**What-If World △**](https://arxiv.org/abs/2605.27589) | 2026 | arXiv | - | - |
 | [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | arXiv | [Code](https://github.com/MBZUAI-IFM/WR-Arena) | - |
 | [**CRONOS △**](https://arxiv.org/abs/2605.23699) | 2026 | arXiv | - | - |
-| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | None | ICML | - | - |
-| [**MVP △**](https://arxiv.org/abs/2506.09987) | None | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
+| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | 2025 | ICML | - | - |
+| [**MVP △**](https://arxiv.org/abs/2506.09987) | 2025 | arXiv | [Code](https://github.com/facebookresearch/minimal_video_pairs) | [Project Page](https://ai.meta.com/research/publications/a-shortcut-aware-video-qa-benchmark-for-physical-understanding-via-minimal-video-pairs/) |
 
 ## Control Fidelity and Interactive Dynamics
 
@@ -230,10 +230,10 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**DreamGen Bench △**](https://arxiv.org/abs/2505.12705) | 2025 | CoRL | [Code](https://github.com/NVIDIA/GR00T-Dreams) | [Project Page](https://research.nvidia.com/labs/gear/dreamgen/) |
 | [**WorldModelBench △**](https://arxiv.org/abs/2502.20694) | 2025 | NeurIPS | [Code](https://github.com/WorldModelBench-Team/WorldModelBench) | [Project Page](https://worldmodelbench-team.github.io) |
 | [**VBench-2.0 △**](https://arxiv.org/abs/2503.21755) | 2025 | arXiv | [Code](https://github.com/Vchitect/VBench) | [Project Page](https://vchitect.github.io/VBench-project/) |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**RBench △**](https://arxiv.org/abs/2601.15282) | None | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
-| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | None | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
-| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | None | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**RBench △**](https://arxiv.org/abs/2601.15282) | 2026 | ICML | [Code](https://github.com/DAGroup-PKU/ReVidgen) | [Project Page](https://dagroup-pku.github.io/ReVidgen.github.io/) |
+| [**PAI-Bench △**](https://arxiv.org/abs/2512.01989) | 2025 | CVPR | [Code](https://github.com/SHI-Labs/physical-ai-bench) | - |
+| [**EZS-Bench △**](https://arxiv.org/abs/2603.23376) | 2026 | arXiv | [Code](https://github.com/amap-cvlab/ABot-PhysWorld) | - |
 
 ### Interactive Action Fidelity
 
@@ -277,8 +277,8 @@ Counts overlap because cross-category benchmarks appear in more than one top-lev
 | [**RoboWM-Bench △**](https://arxiv.org/abs/2604.19092) | 2026 | CVPR | [Code](https://github.com/fffstrong/RoboWM-Bench) | [Project Page](https://robowm-bench.github.io/RoboWM-Bench/) |
 | [**WorldSimBench △**](https://arxiv.org/abs/2410.18072) | 2024 | ICML | - | [Project Page](https://iranqin.github.io/WorldSimBench.github.io/) |
 | [**WR-Arena △**](https://arxiv.org/abs/2603.25887) | 2026 | arXiv | [Code](https://github.com/MBZUAI-IFM/WR-Arena) | - |
-| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | None | arXiv | - | - |
-| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | None | ICML | - | - |
+| [**WoW-World-Eval △**](https://arxiv.org/abs/2601.04137) | 2026 | arXiv | - | - |
+| [**AutumnBench △**](https://arxiv.org/abs/2510.19788) | 2025 | ICML | - | - |
 
 ### World Model as Interactive Training Environment
 
